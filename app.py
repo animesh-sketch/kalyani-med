@@ -1187,34 +1187,89 @@ def nav_to(page):
 
 # ─── NAVBAR ─────────────────────────────────────────────────────────────────
 page = st.session_state.page
-active_home     = "active" if page == "home"     else ""
-active_profiles = "active" if page == "profiles" else ""
-active_create   = "active" if page == "create"   else ""
 
-st.markdown(f"""
-<div class="navbar">
-    <div class="navbar-brand">💖 ShaadiZone</div>
-    <div class="navbar-links" id="nav-links"></div>
+# Scoped button styles for nav only
+st.markdown("""
+<style>
+div[data-testid="stHorizontalBlock"]:has(button[kind="primaryFormSubmit"],
+  button[data-testid="baseButton-secondary"],
+  button[data-testid="baseButton-primary"]) {
+    gap: 0 !important;
+}
+/* Nav button pill style */
+div[data-testid="column"] button {
+    border-radius: 50px !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    padding: 6px 14px !important;
+    letter-spacing: 0.3px !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Header banner — inline styled, no CSS class dependency
+st.markdown("""
+<div style="
+    background: linear-gradient(135deg, #1a0010 0%, #3d0020 50%, #6b0030 100%);
+    padding: 18px 40px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+">
+    <div>
+        <span style="
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #c9a84c;
+            letter-spacing: -0.3px;
+        ">ShaadiZone</span>
+        <span style="
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.35);
+            margin-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        ">Inclusive Matrimony</span>
+    </div>
+    <div style="
+        height: 28px;
+        width: 1px;
+        background: rgba(201,168,76,0.25);
+        margin-right: 8px;
+    "></div>
 </div>
 """, unsafe_allow_html=True)
 
-nav_cols = st.columns([4, 1, 1, 1, 1, 2])
+nav_cols = st.columns([3, 1, 1, 1, 1, 1])
 with nav_cols[1]:
-    if st.button("🏠 Home",        key="nav_home",     use_container_width=True,
+    if st.button("Home",      key="nav_home",     use_container_width=True,
                  type="primary" if page == "home"     else "secondary"):
         nav_to("home")
 with nav_cols[2]:
-    if st.button("💖 Members",     key="nav_profiles", use_container_width=True,
+    if st.button("Members",   key="nav_profiles", use_container_width=True,
                  type="primary" if page == "profiles" else "secondary"):
         nav_to("profiles")
 with nav_cols[3]:
-    if st.button("💝 Matches",     key="nav_matches",  use_container_width=True,
+    if st.button("Matches",   key="nav_matches",  use_container_width=True,
                  type="primary" if page == "matches"  else "secondary"):
         nav_to("matches")
 with nav_cols[4]:
-    if st.button("📝 Join Free",   key="nav_create",   use_container_width=True,
+    if st.button("Join Free", key="nav_create",   use_container_width=True,
                  type="primary" if page == "create"   else "secondary"):
         nav_to("create")
+with nav_cols[5]:
+    st.markdown("""
+    <div style="font-size:0.7rem; color:rgba(255,255,255,0.4);
+                text-align:right; padding-top:6px; padding-right:4px;">
+        ✦ est. 2024
+    </div>
+    """, unsafe_allow_html=True)
 
 # ─── HOME PAGE ───────────────────────────────────────────────────────────────
 def show_home():
