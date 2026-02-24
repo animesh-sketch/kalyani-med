@@ -455,6 +455,117 @@ st.markdown("""
         font-weight: 500;
     }
 
+    /* ─── MATCH CARDS ─── */
+    .match-card {
+        background: white;
+        border-radius: 24px;
+        padding: 24px 28px;
+        box-shadow: 0 8px 28px rgba(233, 30, 99, 0.09);
+        border: 1.5px solid rgba(233, 30, 99, 0.08);
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-bottom: 16px;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .match-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 44px rgba(233, 30, 99, 0.16);
+        border-color: rgba(233, 30, 99, 0.25);
+    }
+
+    .match-rank {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8bbd0;
+        min-width: 36px;
+        line-height: 1;
+        margin-top: 4px;
+    }
+
+    .match-avatar {
+        font-size: 3.2rem;
+        background: linear-gradient(135deg, #e91e63, #c2185b);
+        border-radius: 18px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .match-info { flex: 1; min-width: 0; }
+    .match-name { color: #c2185b; font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 3px; }
+    .match-meta { color: #888; font-size: 0.87rem; margin-bottom: 8px; }
+
+    .match-score-block { text-align: center; flex-shrink: 0; min-width: 110px; }
+
+    .score-ring {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 6px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .score-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; }
+
+    .factor-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+        font-size: 0.78rem;
+    }
+
+    .factor-bar-wrap {
+        flex: 1;
+        background: #f5f5f5;
+        border-radius: 6px;
+        height: 6px;
+        overflow: hidden;
+    }
+
+    .factor-bar {
+        height: 100%;
+        border-radius: 6px;
+        transition: width 0.6s ease;
+    }
+
+    .factor-name { color: #999; min-width: 80px; }
+    .factor-pct  { color: #bbb; min-width: 34px; text-align: right; }
+
+    .match-tag {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        margin-top: 8px;
+    }
+
+    .tag-strong  { background: #e8f5e9; color: #2e7d32; }
+    .tag-good    { background: #fff8e1; color: #f57f17; }
+    .tag-possible{ background: #fce4ec; color: #c2185b; }
+
+    .prefs-panel {
+        background: white;
+        border-radius: 22px;
+        padding: 28px 32px;
+        box-shadow: 0 8px 28px rgba(233, 30, 99, 0.07);
+        border: 1.5px solid rgba(233, 30, 99, 0.08);
+        margin-bottom: 36px;
+    }
+
     /* Hide Streamlit chrome */
     #MainMenu { visibility: hidden; }
     footer { visibility: hidden; }
@@ -504,17 +615,21 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-nav_cols = st.columns([6, 1, 1, 1, 2])
+nav_cols = st.columns([4, 1, 1, 1, 1, 2])
 with nav_cols[1]:
-    if st.button("🏠 Home",       key="nav_home",     use_container_width=True,
+    if st.button("🏠 Home",        key="nav_home",     use_container_width=True,
                  type="primary" if page == "home"     else "secondary"):
         nav_to("home")
 with nav_cols[2]:
-    if st.button("💖 Members",    key="nav_profiles", use_container_width=True,
+    if st.button("💖 Members",     key="nav_profiles", use_container_width=True,
                  type="primary" if page == "profiles" else "secondary"):
         nav_to("profiles")
 with nav_cols[3]:
-    if st.button("📝 Join Free",  key="nav_create",   use_container_width=True,
+    if st.button("💝 Matches",     key="nav_matches",  use_container_width=True,
+                 type="primary" if page == "matches"  else "secondary"):
+        nav_to("matches")
+with nav_cols[4]:
+    if st.button("📝 Join Free",   key="nav_create",   use_container_width=True,
                  type="primary" if page == "create"   else "secondary"):
         nav_to("create")
 
@@ -860,8 +975,202 @@ def show_create_profile():
             nav_to("home")
 
 
+# ─── MATCHING ALGORITHM ──────────────────────────────────────────────────────
+_EDU_RANK = {
+    'below 10th': 1, '10th': 2, '12th': 3, 'diploma': 4,
+    'b.a': 5, 'b.com': 5, 'b.sc': 5, 'b.ed': 5,
+    'b.tech': 6, 'b.des': 6, 'b.arch': 6,
+    'm.a': 7, 'm.sc': 7, 'm.tech': 8, 'mba': 8, 'mbbs': 9, 'phd': 10,
+}
+
+def _edu_rank(edu: str) -> int:
+    edu = edu.lower()
+    for key, rank in _EDU_RANK.items():
+        if key in edu:
+            return rank
+    return 5
+
+def compute_match_score(prefs: dict, candidate: dict) -> tuple[int, dict]:
+    """
+    Weighted compatibility score (0–100) with per-factor breakdown.
+    Returns (score, {factor: (earned, max)}).
+    """
+    total = 0
+    breakdown = {}
+
+    # ── Age  (25 pts) ─────────────────────────────────────────────────────
+    lo, hi = prefs['age_min'], prefs['age_max']
+    age = candidate['age']
+    if lo <= age <= hi:
+        mid  = (lo + hi) / 2
+        half = max((hi - lo) / 2, 1)
+        pts  = max(15, int(25 * (1 - 0.5 * abs(age - mid) / half)))
+    else:
+        dist = min(abs(age - lo), abs(age - hi))
+        pts  = max(0, 10 - dist * 3)
+    total += pts;  breakdown['Age'] = (pts, 25)
+
+    # ── Religion  (20 pts) ────────────────────────────────────────────────
+    pts = 20 if prefs['religion'] in ('Any', candidate['religion']) else 0
+    total += pts;  breakdown['Religion'] = (pts, 20)
+
+    # ── Location  (20 pts) ────────────────────────────────────────────────
+    pts = 20 if prefs['location'] in ('Any City', candidate['location']) else 6
+    total += pts;  breakdown['Location'] = (pts, 20)
+
+    # ── Disability type  (20 pts) ─────────────────────────────────────────
+    pref_dis  = prefs.get('disability_pref', 'Any')
+    cand_type = candidate.get('disability_type', '').lower()
+    if pref_dis == 'Any':
+        pts = 20
+    elif pref_dis.lower() in cand_type or cand_type in pref_dis.lower():
+        pts = 20
+    else:
+        pts = 10          # different disability type — still compatible
+    total += pts;  breakdown['Disability'] = (pts, 20)
+
+    # ── Education  (15 pts) ───────────────────────────────────────────────
+    my_rank   = _edu_rank(prefs.get('education', ''))
+    cand_rank = _edu_rank(candidate['education'])
+    pts       = max(0, 15 - abs(my_rank - cand_rank) * 3)
+    total += pts;  breakdown['Education'] = (pts, 15)
+
+    return min(100, total), breakdown
+
+
+def match_label(score: int) -> tuple[str, str, str]:
+    """Returns (tag_class, emoji, text)."""
+    if score >= 80:
+        return 'tag-strong',   '💚', 'Strong Match'
+    elif score >= 60:
+        return 'tag-good',     '💛', 'Good Match'
+    else:
+        return 'tag-possible', '🩷', 'Possible Match'
+
+
+def score_color(score: int) -> str:
+    if score >= 80: return 'linear-gradient(135deg,#43a047,#66bb6a)'
+    if score >= 60: return 'linear-gradient(135deg,#fb8c00,#ffa726)'
+    return         'linear-gradient(135deg,#e91e63,#c2185b)'
+
+
+# ─── MATCHES PAGE ────────────────────────────────────────────────────────────
+def show_matches():
+    st.markdown('<h1 class="section-title" style="margin-top:32px;">Your Matches 💖</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="section-subtitle">Tell us about yourself and we\'ll rank the best profiles for you</p>', unsafe_allow_html=True)
+
+    # ── Preferences panel ────────────────────────────────────────────────
+    st.markdown('<div class="prefs-panel">', unsafe_allow_html=True)
+    st.markdown("#### ⚙️ Your Preferences")
+
+    pc1, pc2, pc3 = st.columns(3)
+    with pc1:
+        age_min = st.number_input("Partner Age — Min", min_value=18, max_value=55, value=22)
+        religion_pref = st.selectbox("Religion", ["Any"] + religions)
+    with pc2:
+        age_max = st.number_input("Partner Age — Max", min_value=18, max_value=55, value=32)
+        location_pref = st.selectbox("Preferred City", ["Any City"] + locations)
+    with pc3:
+        disability_pref = st.selectbox("Disability Type", ["Any"] + [
+            'Physical', 'Visual', 'Hearing', 'Speech', 'Other'
+        ])
+        my_education = st.text_input("Your Education", placeholder="e.g. B.Tech, MBA…")
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    prefs = {
+        'age_min':        age_min,
+        'age_max':        age_max,
+        'religion':       religion_pref,
+        'location':       location_pref,
+        'disability_pref':disability_pref,
+        'education':      my_education or 'B.Tech',
+    }
+
+    # ── Score all profiles ────────────────────────────────────────────────
+    scored = []
+    for p in st.session_state.profiles:
+        score, breakdown = compute_match_score(prefs, p)
+        scored.append((score, breakdown, p))
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+    # ── Summary strip ─────────────────────────────────────────────────────
+    strong  = sum(1 for s, _, _ in scored if s >= 80)
+    good    = sum(1 for s, _, _ in scored if 60 <= s < 80)
+    possible= sum(1 for s, _, _ in scored if s < 60)
+
+    sc1, sc2, sc3, sc4 = st.columns(4)
+    with sc1: st.metric("Total Profiles", len(scored))
+    with sc2: st.metric("💚 Strong Matches",   strong)
+    with sc3: st.metric("💛 Good Matches",      good)
+    with sc4: st.metric("🩷 Possible Matches",  possible)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # ── Match cards ───────────────────────────────────────────────────────
+    for rank, (score, breakdown, profile) in enumerate(scored, 1):
+        tag_cls, tag_emoji, tag_text = match_label(score)
+        ring_bg = score_color(score)
+
+        # Build factor bars HTML
+        factor_html = ""
+        for factor, (earned, max_pts) in breakdown.items():
+            pct   = int(earned / max_pts * 100)
+            bar_c = '#4caf50' if pct >= 80 else '#fb8c00' if pct >= 50 else '#e91e63'
+            factor_html += f"""
+            <div class="factor-row">
+                <span class="factor-name">{factor}</span>
+                <div class="factor-bar-wrap">
+                    <div class="factor-bar" style="width:{pct}%; background:{bar_c};"></div>
+                </div>
+                <span class="factor-pct">{pct}%</span>
+            </div>"""
+
+        verified_badge = '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:700;">✓ Verified</span>' if profile['verified'] else ''
+
+        st.markdown(f"""
+        <div class="match-card">
+            <div class="match-rank">#{rank}</div>
+            <div class="match-avatar">{profile['image']}</div>
+            <div class="match-info">
+                <div class="match-name">{profile['name']}
+                    &nbsp;{verified_badge}
+                </div>
+                <div class="match-meta">
+                    {profile['age']} yrs &nbsp;·&nbsp; {profile['location']} &nbsp;·&nbsp;
+                    {profile['profession']} &nbsp;·&nbsp; {profile['education']}
+                </div>
+                <span class="disability-badge">♿ {profile.get('disability','N/A')}</span>
+                <span class="match-tag {tag_cls}">&nbsp;{tag_emoji} {tag_text}&nbsp;</span>
+                <div style="margin-top:14px;">{factor_html}</div>
+            </div>
+            <div class="match-score-block">
+                <div class="score-ring" style="background:{ring_bg};">{score}%</div>
+                <div class="score-label" style="color:{'#2e7d32' if score>=80 else '#f57f17' if score>=60 else '#c2185b'};">
+                    {tag_text}
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Action buttons under each card
+        b1, b2, b3, _ = st.columns([1, 1, 1, 3])
+        with b1:
+            if st.button("💌 Interest", key=f"int_{profile['id']}", use_container_width=True, type="primary"):
+                st.success(f"Interest sent to {profile['name']}!")
+        with b2:
+            if st.button("👤 Profile",  key=f"mp_{profile['id']}",  use_container_width=True):
+                st.session_state.selected_profile = profile
+                st.session_state.page = "detail"
+                st.rerun()
+        with b3:
+            if st.button("💗 Shortlist", key=f"sl_{profile['id']}", use_container_width=True):
+                st.success(f"{profile['name']} added to favourites!")
+
+
 # ─── ROUTER ─────────────────────────────────────────────────────────────────
 if   st.session_state.page == "home":     show_home()
 elif st.session_state.page == "profiles": show_profiles()
 elif st.session_state.page == "detail":   show_profile_detail()
 elif st.session_state.page == "create":   show_create_profile()
+elif st.session_state.page == "matches":  show_matches()
