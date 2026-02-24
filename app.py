@@ -1482,183 +1482,24 @@ def show_home():
             </div>
             """, unsafe_allow_html=True)
 
-    # ── WEDDING ILLUSTRATION ──────────────────────────────────────────────────
+    # ── WEDDING ILLUSTRATION ──────────────────────────────────────────────
     st.markdown("""
-    <div style="display:flex; align-items:center; gap:16px; margin:60px auto 0; max-width:320px;">
-        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
-        <span style="color:#c9a84c; font-size:1.1rem;">&#x1F48D;</span>
-        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+    <div style="display:flex;align-items:center;gap:16px;margin:60px auto 0;max-width:320px;">
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+        <span style="color:#c9a84c;font-size:1.1rem;">&#x1F48D;</span>
+        <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
     </div>
-    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; text-align:center;
-               color:#c2185b; margin:20px 0 6px;">A Moment of Love</h2>
-    <p style="text-align:center; color:#aaa; font-size:0.9rem; margin-bottom:32px;">
-        Love has no barriers — it only has beginnings
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;text-align:center;
+               color:#c2185b;margin:20px 0 6px;">A Moment of Love</h2>
+    <p style="text-align:center;color:#aaa;font-size:0.9rem;margin-bottom:32px;">
+        Love has no barriers &#8212; it only has beginnings
     </p>
     <div style="background:linear-gradient(160deg,#1a0010 0%,#2d0018 100%);
-                border-radius:28px; padding:20px; margin:0 auto;
-                max-width:820px; box-shadow:0 20px 60px rgba(0,0,0,0.45);">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" style="width:100%;height:auto;display:block;">
-        <defs>
-          <linearGradient id="svgBg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#1a0010"/>
-            <stop offset="50%" stop-color="#3d0020"/>
-            <stop offset="100%" stop-color="#6b0030"/>
-          </linearGradient>
-          <radialGradient id="svgCG" cx="50%" cy="62%" r="30%">
-            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="svgHG" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <rect width="800" height="440" fill="url(#svgBg)"/>
-        <rect width="800" height="440" fill="url(#svgCG)"/>
-        <!-- Bokeh -->
-        <circle cx="80" cy="70" r="35" fill="#c9a84c" opacity="0.03"/>
-        <circle cx="720" cy="55" r="50" fill="#e91e63" opacity="0.04"/>
-        <circle cx="140" cy="380" r="28" fill="#c9a84c" opacity="0.04"/>
-        <circle cx="660" cy="395" r="38" fill="#e91e63" opacity="0.04"/>
-        <!-- Floating hearts -->
-        <text x="100" y="92" font-size="22" fill="#c9a84c" opacity="0.42">&#x2665;</text>
-        <text x="688" y="76" font-size="18" fill="#e91e63" opacity="0.38">&#x2665;</text>
-        <text x="346" y="54" font-size="26" fill="#c9a84c" opacity="0.32">&#x2665;</text>
-        <text x="456" y="74" font-size="15" fill="#f8bbd0" opacity="0.38">&#x2665;</text>
-        <text x="183" y="177" font-size="13" fill="#c9a84c" opacity="0.26">&#x2665;</text>
-        <text x="598" y="157" font-size="11" fill="#e91e63" opacity="0.28">&#x2665;</text>
-        <text x="308" y="392" font-size="10" fill="#c9a84c" opacity="0.23">&#x2665;</text>
-        <text x="488" y="397" font-size="12" fill="#e91e63" opacity="0.23">&#x2665;</text>
-        <!-- Rose petals -->
-        <circle cx="293" cy="127" r="7" fill="#e91e63" opacity="0.22"/>
-        <circle cx="503" cy="110" r="6" fill="#f06292" opacity="0.22"/>
-        <circle cx="353" cy="377" r="8" fill="#c9a84c" opacity="0.16"/>
-        <circle cx="463" cy="387" r="6" fill="#e91e63" opacity="0.16"/>
-
-        <!-- === GROOM (left, facing right) === -->
-        <!-- Head -->
-        <circle cx="225" cy="118" r="33" fill="#c2185b" opacity="0.88"/>
-        <!-- Hair -->
-        <path d="M 197 108 Q 210 92 225 90 Q 240 92 253 108 L 258 116 Q 245 100 225 98 Q 205 100 192 116 Z" fill="#3d0020" opacity="0.8"/>
-        <!-- Eyes -->
-        <circle cx="215" cy="114" r="4" fill="rgba(255,255,255,0.5)"/>
-        <circle cx="235" cy="114" r="4" fill="rgba(255,255,255,0.5)"/>
-        <circle cx="216" cy="115" r="2" fill="#2d0018"/>
-        <circle cx="236" cy="115" r="2" fill="#2d0018"/>
-        <!-- Smile -->
-        <path d="M 215 128 Q 225 137 235 128" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <!-- Suit -->
-        <path d="M 192 166 L 180 278 L 268 278 L 256 166 Z" fill="#2d0018"/>
-        <!-- Shirt -->
-        <path d="M 218 166 L 214 200 L 225 192 L 236 200 L 232 166 Z" fill="white" opacity="0.72"/>
-        <!-- Tie -->
-        <path d="M 222 168 L 219 202 L 225 210 L 231 202 L 228 168 Z" fill="#c9a84c" opacity="0.9"/>
-        <!-- Lapels -->
-        <path d="M 218 166 L 200 196 L 215 180 Z" fill="#3d0020"/>
-        <path d="M 232 166 L 250 196 L 235 180 Z" fill="#3d0020"/>
-        <!-- Right arm reaching to center -->
-        <path d="M 256 190 Q 320 220 378 247" stroke="#2d0018" stroke-width="15" fill="none" stroke-linecap="round"/>
-        <path d="M 256 190 Q 320 220 378 247" stroke="#c2185b" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.28"/>
-        <!-- Hand -->
-        <circle cx="380" cy="248" r="12" fill="#c2185b" opacity="0.82"/>
-        <!-- Left arm -->
-        <path d="M 194 185 L 155 252" stroke="#2d0018" stroke-width="13" fill="none" stroke-linecap="round"/>
-        <!-- Legs -->
-        <path d="M 212 278 L 210 308 L 265 308" stroke="#2d0018" stroke-width="13" fill="none" stroke-linecap="round"/>
-        <path d="M 250 308 L 272 324" stroke="#2d0018" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <!-- Groom wheelchair -->
-        <line x1="174" y1="274" x2="270" y2="274" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="200" y1="274" x2="200" y2="224" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="195" y1="224" x2="238" y2="224" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="270" y1="274" x2="293" y2="310" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="278" y1="316" x2="303" y2="316" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="300" cy="330" r="16" stroke="#c9a84c" stroke-width="3" fill="none"/>
-        <circle cx="300" cy="330" r="5" fill="#c9a84c"/>
-        <circle cx="174" cy="328" r="65" stroke="#c9a84c" stroke-width="3.5" fill="none"/>
-        <line x1="174" y1="263" x2="174" y2="393" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
-        <line x1="109" y1="328" x2="239" y2="328" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
-        <line x1="128" y1="282" x2="220" y2="374" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
-        <line x1="128" y1="374" x2="220" y2="282" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
-        <circle cx="174" cy="328" r="10" fill="#c9a84c"/>
-        <circle cx="174" cy="328" r="56" stroke="#c9a84c" stroke-width="1.8" fill="none" opacity="0.32"/>
-
-        <!-- === BRIDE (right, facing left) === -->
-        <!-- Veil -->
-        <path d="M 549 98 Q 575 84 601 98 L 618 178 Q 605 185 575 182 Q 545 185 532 178 Z" fill="white" opacity="0.42"/>
-        <!-- Head -->
-        <circle cx="575" cy="118" r="33" fill="#f8bbd0" opacity="0.95"/>
-        <!-- Hair bun -->
-        <path d="M 551 108 Q 560 92 575 89 Q 590 92 599 108" fill="#3d0020" opacity="0.55"/>
-        <circle cx="575" cy="87" r="9" fill="#3d0020" opacity="0.55"/>
-        <!-- Floral hair piece -->
-        <circle cx="586" cy="80" r="7" fill="#c9a84c" opacity="0.95"/>
-        <circle cx="591" cy="86" r="5" fill="#e91e63" opacity="0.85"/>
-        <circle cx="581" cy="74" r="5" fill="#e91e63" opacity="0.85"/>
-        <!-- Eyes -->
-        <circle cx="565" cy="114" r="4" fill="rgba(194,24,91,0.55)"/>
-        <circle cx="585" cy="114" r="4" fill="rgba(194,24,91,0.55)"/>
-        <circle cx="566" cy="115" r="2" fill="#3d0020"/>
-        <circle cx="586" cy="115" r="2" fill="#3d0020"/>
-        <!-- Smile -->
-        <path d="M 565 128 Q 575 137 585 128" stroke="rgba(194,24,91,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <!-- Dress bodice -->
-        <path d="M 550 166 L 545 228 L 575 220 L 605 228 L 600 166 Z" fill="white" opacity="0.88"/>
-        <!-- Neckline -->
-        <path d="M 560 166 Q 575 178 590 166" stroke="#f8bbd0" stroke-width="2" fill="none"/>
-        <!-- Skirt -->
-        <path d="M 545 228 L 516 292 L 632 292 L 605 228 Z" fill="white" opacity="0.82"/>
-        <!-- Lace detail -->
-        <path d="M 558 176 L 558 218 M 568 173 L 568 220 M 582 173 L 582 220 M 592 176 L 592 218" stroke="rgba(249,190,209,0.45)" stroke-width="1" fill="none"/>
-        <!-- Left arm to center -->
-        <path d="M 548 192 Q 488 220 422 248" stroke="white" stroke-width="13" fill="none" stroke-linecap="round" opacity="0.82"/>
-        <path d="M 548 192 Q 488 220 422 248" stroke="#f8bbd0" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.28"/>
-        <!-- Hand -->
-        <circle cx="420" cy="249" r="12" fill="#f8bbd0" opacity="0.95"/>
-        <!-- Right arm with bouquet -->
-        <path d="M 602 192 L 648 238" stroke="white" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.82"/>
-        <!-- Bouquet -->
-        <ellipse cx="652" cy="252" rx="27" ry="23" fill="#c2185b" opacity="0.45"/>
-        <circle cx="640" cy="242" r="14" fill="#e91e63" opacity="0.68"/>
-        <circle cx="662" cy="240" r="13" fill="#c2185b" opacity="0.72"/>
-        <circle cx="652" cy="232" r="13" fill="#ad1457" opacity="0.72"/>
-        <circle cx="647" cy="252" r="11" fill="#e91e63" opacity="0.62"/>
-        <circle cx="663" cy="252" r="10" fill="#c2185b" opacity="0.62"/>
-        <circle cx="648" cy="238" r="5" fill="white" opacity="0.6"/>
-        <circle cx="656" cy="244" r="4" fill="white" opacity="0.55"/>
-        <circle cx="644" cy="250" r="4" fill="white" opacity="0.5"/>
-        <path d="M 652 273 L 650 288" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
-        <path d="M 640 275 Q 651 283 662 275" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <!-- Legs in dress -->
-        <path d="M 565 292 L 563 318 L 530 318" stroke="#f8eef2" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.75"/>
-        <path d="M 542 318 L 522 334" stroke="#f8eef2" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.75"/>
-        <!-- Bride wheelchair -->
-        <line x1="530" y1="285" x2="626" y2="285" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="600" y1="285" x2="600" y2="235" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="562" y1="235" x2="605" y2="235" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
-        <line x1="530" y1="285" x2="506" y2="316" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
-        <line x1="498" y1="322" x2="522" y2="322" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="500" cy="336" r="16" stroke="#c9a84c" stroke-width="3" fill="none"/>
-        <circle cx="500" cy="336" r="5" fill="#c9a84c"/>
-        <circle cx="626" cy="333" r="65" stroke="#c9a84c" stroke-width="3.5" fill="none"/>
-        <line x1="626" y1="268" x2="626" y2="398" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
-        <line x1="561" y1="333" x2="691" y2="333" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
-        <line x1="580" y1="287" x2="672" y2="379" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
-        <line x1="580" y1="379" x2="672" y2="287" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
-        <circle cx="626" cy="333" r="10" fill="#c9a84c"/>
-        <circle cx="626" cy="333" r="56" stroke="#c9a84c" stroke-width="1.8" fill="none" opacity="0.32"/>
-
-        <!-- === JOINED HANDS (center) === -->
-        <ellipse cx="400" cy="249" rx="58" ry="40" fill="url(#svgHG)"/>
-        <!-- Wedding rings -->
-        <circle cx="394" cy="245" r="8" stroke="#c9a84c" stroke-width="2.5" fill="none" opacity="0.9"/>
-        <circle cx="408" cy="248" r="6" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.85"/>
-        <!-- Heart -->
-        <text x="396" y="270" font-size="14" fill="#e91e63" opacity="0.82" font-family="Arial">&#x2665;</text>
-
-        <!-- Caption -->
-        <text x="400" y="413" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#c9a84c" text-anchor="middle" opacity="0.9">Every Love Story is Beautiful</text>
-        <text x="400" y="432" font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">ShaadiZone &#xB7; Celebrating Every Love</text>
-      </svg>
+                border-radius:28px;padding:20px;margin:0 auto;
+                max-width:820px;box-shadow:0 20px 60px rgba(0,0,0,0.45);">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InN2Z0JnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMWEwMDEwIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMzZDAwMjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2YjAwMzAiLz48L2xpbmVhckdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0ic3ZnQ0ciIGN4PSI1MCUiIGN5PSI2MiUiIHI9IjMwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M5YTg0YyIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlhODRjIiBzdG9wLW9wYWNpdHk9IjAiLz48L3JhZGlhbEdyYWRpZW50PjxyYWRpYWxHcmFkaWVudCBpZD0ic3ZnSEciIGN4PSI1MCUiIGN5PSI1MCUiIHI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M5YTg0YyIgc3RvcC1vcGFjaXR5PSIwLjYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjOWE4NGMiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDQwIiBmaWxsPSJ1cmwoI3N2Z0JnKSIvPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDQwIiBmaWxsPSJ1cmwoI3N2Z0NHKSIvPjxjaXJjbGUgY3g9IjgwIiBjeT0iNzAiIHI9IjM1IiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjAzIi8+PGNpcmNsZSBjeD0iNzIwIiBjeT0iNTUiIHI9IjUwIiBmaWxsPSIjZTkxZTYzIiBvcGFjaXR5PSIwLjA0Ii8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMzgwIiByPSIyOCIgZmlsbD0iI2M5YTg0YyIgb3BhY2l0eT0iMC4wNCIvPjxjaXJjbGUgY3g9IjY2MCIgY3k9IjM5NSIgcj0iMzgiIGZpbGw9IiNlOTFlNjMiIG9wYWNpdHk9IjAuMDQiLz48dGV4dCB4PSIxMDAiIHk9IjkyIiBmb250LXNpemU9IjIyIiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjQyIj7imaU8L3RleHQ+PHRleHQgeD0iNjg4IiB5PSI3NiIgZm9udC1zaXplPSIxOCIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC4zOCI+4pmlPC90ZXh0Pjx0ZXh0IHg9IjM0NiIgeT0iNTQiIGZvbnQtc2l6ZT0iMjYiIGZpbGw9IiNjOWE4NGMiIG9wYWNpdHk9IjAuMzIiPuKZpTwvdGV4dD48dGV4dCB4PSI0NTYiIHk9Ijc0IiBmb250LXNpemU9IjE1IiBmaWxsPSIjZjhiYmQwIiBvcGFjaXR5PSIwLjM4Ij7imaU8L3RleHQ+PHRleHQgeD0iMTgzIiB5PSIxNzciIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiNjOWE4NGMiIG9wYWNpdHk9IjAuMjYiPuKZpTwvdGV4dD48dGV4dCB4PSI1OTgiIHk9IjE1NyIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC4yOCI+4pmlPC90ZXh0Pjx0ZXh0IHg9IjMwOCIgeT0iMzkyIiBmb250LXNpemU9IjEwIiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjIzIj7imaU8L3RleHQ+PHRleHQgeD0iNDg4IiB5PSIzOTciIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNlOTFlNjMiIG9wYWNpdHk9IjAuMjMiPuKZpTwvdGV4dD48Y2lyY2xlIGN4PSIyOTMiIGN5PSIxMjciIHI9IjciIGZpbGw9IiNlOTFlNjMiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSI1MDMiIGN5PSIxMTAiIHI9IjYiIGZpbGw9IiNmMDYyOTIiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIzNTMiIGN5PSIzNzciIHI9IjgiIGZpbGw9IiNjOWE4NGMiIG9wYWNpdHk9IjAuMTYiLz48Y2lyY2xlIGN4PSI0NjMiIGN5PSIzODciIHI9IjYiIGZpbGw9IiNlOTFlNjMiIG9wYWNpdHk9IjAuMTYiLz48Y2lyY2xlIGN4PSIyMjUiIGN5PSIxMTgiIHI9IjMzIiBmaWxsPSIjYzIxODViIiBvcGFjaXR5PSIwLjg4Ii8+PHBhdGggZD0iTSAxOTcgMTA4IFEgMjEwIDkyIDIyNSA5MCBRIDI0MCA5MiAyNTMgMTA4IEwgMjU4IDExNiBRIDI0NSAxMDAgMjI1IDk4IFEgMjA1IDEwMCAxOTIgMTE2IFoiIGZpbGw9IiMzZDAwMjAiIG9wYWNpdHk9IjAuOCIvPjxjaXJjbGUgY3g9IjIxNSIgY3k9IjExNCIgcj0iNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjUpIi8+PGNpcmNsZSBjeD0iMjM1IiBjeT0iMTE0IiByPSI0IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiLz48Y2lyY2xlIGN4PSIyMTYiIGN5PSIxMTUiIHI9IjIiIGZpbGw9IiMyZDAwMTgiLz48Y2lyY2xlIGN4PSIyMzYiIGN5PSIxMTUiIHI9IjIiIGZpbGw9IiMyZDAwMTgiLz48cGF0aCBkPSJNIDIxNSAxMjggUSAyMjUgMTM3IDIzNSAxMjgiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjUpIiBzdHJva2Utd2lkdGg9IjIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTSAxOTIgMTY2IEwgMTgwIDI3OCBMIDI2OCAyNzggTCAyNTYgMTY2IFoiIGZpbGw9IiMyZDAwMTgiLz48cGF0aCBkPSJNIDIxOCAxNjYgTCAyMTQgMjAwIEwgMjI1IDE5MiBMIDIzNiAyMDAgTCAyMzIgMTY2IFoiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjcyIi8+PHBhdGggZD0iTSAyMjIgMTY4IEwgMjE5IDIwMiBMIDIyNSAyMTAgTCAyMzEgMjAyIEwgMjI4IDE2OCBaIiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjkiLz48cGF0aCBkPSJNIDIxOCAxNjYgTCAyMDAgMTk2IEwgMjE1IDE4MCBaIiBmaWxsPSIjM2QwMDIwIi8+PHBhdGggZD0iTSAyMzIgMTY2IEwgMjUwIDE5NiBMIDIzNSAxODAgWiIgZmlsbD0iIzNkMDAyMCIvPjxwYXRoIGQ9Ik0gMjU2IDE5MCBRIDMyMCAyMjAgMzc4IDI0NyIgc3Ryb2tlPSIjMmQwMDE4IiBzdHJva2Utd2lkdGg9IjE1IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNIDI1NiAxOTAgUSAzMjAgMjIwIDM3OCAyNDciIHN0cm9rZT0iI2MyMTg1YiIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjI4Ii8+PGNpcmNsZSBjeD0iMzgwIiBjeT0iMjQ4IiByPSIxMiIgZmlsbD0iI2MyMTg1YiIgb3BhY2l0eT0iMC44MiIvPjxwYXRoIGQ9Ik0gMTk0IDE4NSBMIDE1NSAyNTIiIHN0cm9rZT0iIzJkMDAxOCIgc3Ryb2tlLXdpZHRoPSIxMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTSAyMTIgMjc4IEwgMjEwIDMwOCBMIDI2NSAzMDgiIHN0cm9rZT0iIzJkMDAxOCIgc3Ryb2tlLXdpZHRoPSIxMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTSAyNTAgMzA4IEwgMjcyIDMyNCIgc3Ryb2tlPSIjMmQwMDE4IiBzdHJva2Utd2lkdGg9IjEwIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMTc0IiB5MT0iMjc0IiB4Mj0iMjcwIiB5Mj0iMjc0IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMjAwIiB5MT0iMjc0IiB4Mj0iMjAwIiB5Mj0iMjI0IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMTk1IiB5MT0iMjI0IiB4Mj0iMjM4IiB5Mj0iMjI0IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjI3MCIgeTE9IjI3NCIgeDI9IjI5MyIgeTI9IjMxMCIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjI3OCIgeTE9IjMxNiIgeDI9IjMwMyIgeTI9IjMxNiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMzMwIiByPSIxNiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIzMzAiIHI9IjUiIGZpbGw9IiNjOWE4NGMiLz48Y2lyY2xlIGN4PSIxNzQiIGN5PSIzMjgiIHI9IjY1IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMy41IiBmaWxsPSJub25lIi8+PGxpbmUgeDE9IjE3NCIgeTE9IjI2MyIgeDI9IjE3NCIgeTI9IjM5MyIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC40MiIvPjxsaW5lIHgxPSIxMDkiIHkxPSIzMjgiIHgyPSIyMzkiIHkyPSIzMjgiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNDIiLz48bGluZSB4MT0iMTI4IiB5MT0iMjgyIiB4Mj0iMjIwIiB5Mj0iMzc0IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjMyIi8+PGxpbmUgeDE9IjEyOCIgeTE9IjM3NCIgeDI9IjIyMCIgeTI9IjI4MiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC4zMiIvPjxjaXJjbGUgY3g9IjE3NCIgY3k9IjMyOCIgcj0iMTAiIGZpbGw9IiNjOWE4NGMiLz48Y2lyY2xlIGN4PSIxNzQiIGN5PSIzMjgiIHI9IjU2IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMS44IiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjMyIi8+PHBhdGggZD0iTSA1NDkgOTggUSA1NzUgODQgNjAxIDk4IEwgNjE4IDE3OCBRIDYwNSAxODUgNTc1IDE4MiBRIDU0NSAxODUgNTMyIDE3OCBaIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC40MiIvPjxjaXJjbGUgY3g9IjU3NSIgY3k9IjExOCIgcj0iMzMiIGZpbGw9IiNmOGJiZDAiIG9wYWNpdHk9IjAuOTUiLz48cGF0aCBkPSJNIDU1MSAxMDggUSA1NjAgOTIgNTc1IDg5IFEgNTkwIDkyIDU5OSAxMDgiIGZpbGw9IiMzZDAwMjAiIG9wYWNpdHk9IjAuNTUiLz48Y2lyY2xlIGN4PSI1NzUiIGN5PSI4NyIgcj0iOSIgZmlsbD0iIzNkMDAyMCIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjU4NiIgY3k9IjgwIiByPSI3IiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjk1Ii8+PGNpcmNsZSBjeD0iNTkxIiBjeT0iODYiIHI9IjUiIGZpbGw9IiNlOTFlNjMiIG9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSI1ODEiIGN5PSI3NCIgcj0iNSIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC44NSIvPjxjaXJjbGUgY3g9IjU2NSIgY3k9IjExNCIgcj0iNCIgZmlsbD0icmdiYSgxOTQsMjQsOTEsMC41NSkiLz48Y2lyY2xlIGN4PSI1ODUiIGN5PSIxMTQiIHI9IjQiIGZpbGw9InJnYmEoMTk0LDI0LDkxLDAuNTUpIi8+PGNpcmNsZSBjeD0iNTY2IiBjeT0iMTE1IiByPSIyIiBmaWxsPSIjM2QwMDIwIi8+PGNpcmNsZSBjeD0iNTg2IiBjeT0iMTE1IiByPSIyIiBmaWxsPSIjM2QwMDIwIi8+PHBhdGggZD0iTSA1NjUgMTI4IFEgNTc1IDEzNyA1ODUgMTI4IiBzdHJva2U9InJnYmEoMTk0LDI0LDkxLDAuNTUpIiBzdHJva2Utd2lkdGg9IjIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTSA1NTAgMTY2IEwgNTQ1IDIyOCBMIDU3NSAyMjAgTCA2MDUgMjI4IEwgNjAwIDE2NiBaIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC44OCIvPjxwYXRoIGQ9Ik0gNTYwIDE2NiBRIDU3NSAxNzggNTkwIDE2NiIgc3Ryb2tlPSIjZjhiYmQwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIDU0NSAyMjggTCA1MTYgMjkyIEwgNjMyIDI5MiBMIDYwNSAyMjggWiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuODIiLz48cGF0aCBkPSJNIDU1OCAxNzYgTCA1NTggMjE4IE0gNTY4IDE3MyBMIDU2OCAyMjAgTSA1ODIgMTczIEwgNTgyIDIyMCBNIDU5MiAxNzYgTCA1OTIgMjE4IiBzdHJva2U9InJnYmEoMjQ5LDE5MCwyMDksMC40NSkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0gNTQ4IDE5MiBRIDQ4OCAyMjAgNDIyIDI0OCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjgyIi8+PHBhdGggZD0iTSA1NDggMTkyIFEgNDg4IDIyMCA0MjIgMjQ4IiBzdHJva2U9IiNmOGJiZDAiIHN0cm9rZS13aWR0aD0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjI4Ii8+PGNpcmNsZSBjeD0iNDIwIiBjeT0iMjQ5IiByPSIxMiIgZmlsbD0iI2Y4YmJkMCIgb3BhY2l0eT0iMC45NSIvPjxwYXRoIGQ9Ik0gNjAyIDE5MiBMIDY0OCAyMzgiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC44MiIvPjxlbGxpcHNlIGN4PSI2NTIiIGN5PSIyNTIiIHJ4PSIyNyIgcnk9IjIzIiBmaWxsPSIjYzIxODViIiBvcGFjaXR5PSIwLjQ1Ii8+PGNpcmNsZSBjeD0iNjQwIiBjeT0iMjQyIiByPSIxNCIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC42OCIvPjxjaXJjbGUgY3g9IjY2MiIgY3k9IjI0MCIgcj0iMTMiIGZpbGw9IiNjMjE4NWIiIG9wYWNpdHk9IjAuNzIiLz48Y2lyY2xlIGN4PSI2NTIiIGN5PSIyMzIiIHI9IjEzIiBmaWxsPSIjYWQxNDU3IiBvcGFjaXR5PSIwLjcyIi8+PGNpcmNsZSBjeD0iNjQ3IiBjeT0iMjUyIiByPSIxMSIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC42MiIvPjxjaXJjbGUgY3g9IjY2MyIgY3k9IjI1MiIgcj0iMTAiIGZpbGw9IiNjMjE4NWIiIG9wYWNpdHk9IjAuNjIiLz48Y2lyY2xlIGN4PSI2NDgiIGN5PSIyMzgiIHI9IjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI2NTYiIGN5PSIyNDQiIHI9IjQiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjU1Ii8+PGNpcmNsZSBjeD0iNjQ0IiBjeT0iMjUwIiByPSI0IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+PHBhdGggZD0iTSA2NTIgMjczIEwgNjUwIDI4OCIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTSA2NDAgMjc1IFEgNjUxIDI4MyA2NjIgMjc1IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNIDU2NSAyOTIgTCA1NjMgMzE4IEwgNTMwIDMxOCIgc3Ryb2tlPSIjZjhlZWYyIiBzdHJva2Utd2lkdGg9IjEyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjAuNzUiLz48cGF0aCBkPSJNIDU0MiAzMTggTCA1MjIgMzM0IiBzdHJva2U9IiNmOGVlZjIiIHN0cm9rZS13aWR0aD0iMTAiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC43NSIvPjxsaW5lIHgxPSI1MzAiIHkxPSIyODUiIHgyPSI2MjYiIHkyPSIyODUiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSI0LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI2MDAiIHkxPSIyODUiIHgyPSI2MDAiIHkyPSIyMzUiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSI0LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI1NjIiIHkxPSIyMzUiIHgyPSI2MDUiIHkyPSIyMzUiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iNTMwIiB5MT0iMjg1IiB4Mj0iNTA2IiB5Mj0iMzE2IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMy41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iNDk4IiB5MT0iMzIyIiB4Mj0iNTIyIiB5Mj0iMzIyIiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMy41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI1MDAiIGN5PSIzMzYiIHI9IjE2IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjUwMCIgY3k9IjMzNiIgcj0iNSIgZmlsbD0iI2M5YTg0YyIvPjxjaXJjbGUgY3g9IjYyNiIgY3k9IjMzMyIgcj0iNjUiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIzLjUiIGZpbGw9Im5vbmUiLz48bGluZSB4MT0iNjI2IiB5MT0iMjY4IiB4Mj0iNjI2IiB5Mj0iMzk4IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjQyIi8+PGxpbmUgeDE9IjU2MSIgeTE9IjMzMyIgeDI9IjY5MSIgeTI9IjMzMyIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC40MiIvPjxsaW5lIHgxPSI1ODAiIHkxPSIyODciIHgyPSI2NzIiIHkyPSIzNzkiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuMzIiLz48bGluZSB4MT0iNTgwIiB5MT0iMzc5IiB4Mj0iNjcyIiB5Mj0iMjg3IiBzdHJva2U9IiNjOWE4NGMiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjMyIi8+PGNpcmNsZSBjeD0iNjI2IiBjeT0iMzMzIiByPSIxMCIgZmlsbD0iI2M5YTg0YyIvPjxjaXJjbGUgY3g9IjYyNiIgY3k9IjMzMyIgcj0iNTYiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIxLjgiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuMzIiLz48ZWxsaXBzZSBjeD0iNDAwIiBjeT0iMjQ5IiByeD0iNTgiIHJ5PSI0MCIgZmlsbD0idXJsKCNzdmdIRykiLz48Y2lyY2xlIGN4PSIzOTQiIGN5PSIyNDUiIHI9IjgiIHN0cm9rZT0iI2M5YTg0YyIgc3Ryb2tlLXdpZHRoPSIyLjUiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuOSIvPjxjaXJjbGUgY3g9IjQwOCIgY3k9IjI0OCIgcj0iNiIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuODUiLz48dGV4dCB4PSIzOTYiIHk9IjI3MCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2U5MWU2MyIgb3BhY2l0eT0iMC44MiIgZm9udC1mYW1pbHk9IkFyaWFsIj7imaU8L3RleHQ+PHRleHQgeD0iNDAwIiB5PSI0MTMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCdUaW1lcyBOZXcgUm9tYW4nLHNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXN0eWxlPSJpdGFsaWMiIGZpbGw9IiNjOWE4NGMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIG9wYWNpdHk9IjAuOSI+RXZlcnkgTG92ZSBTdG9yeSBpcyBCZWF1dGlmdWw8L3RleHQ+PHRleHQgeD0iNDAwIiB5PSI0MzIiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMykiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNoYWFkaVpvbmUgwrcgQ2VsZWJyYXRpbmcgRXZlcnkgTG92ZTwvdGV4dD48L3N2Zz4="
+             style="width:100%;height:auto;display:block;border-radius:16px;"
+             alt="Two people in wheelchairs getting married — a moment of love" />
     </div>
     """, unsafe_allow_html=True)
 
