@@ -1274,27 +1274,37 @@ def show_home():
 
     # ── BELIEF STRIP ─────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="belief-strip">
-        <p class="belief-quote">
-            "Love is not something you <span class="gold-em">earn</span>
-            through ability — it is something you <span class="gold-em">deserve</span>
+    <div style="background:linear-gradient(135deg,#2d0018,#4a0028);
+                padding:72px 40px; text-align:center; margin:0;">
+        <p style="font-family:'Playfair Display',serif; font-size:2.2rem; font-style:italic;
+                  color:white; line-height:1.5; max-width:800px; margin:0 auto 18px;">
+            "Love is not something you <span style="color:#c9a84c;">earn</span>
+            through ability — it is something you <span style="color:#c9a84c;">deserve</span>
             through simply being."
         </p>
-        <p class="belief-sub">— The ShaadiZone Belief</p>
+        <p style="color:rgba(255,255,255,0.38); font-size:0.82rem; letter-spacing:2.5px;
+                  text-transform:uppercase;">— The ShaadiZone Belief</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── OUR PROMISE ──────────────────────────────────────────────────────────
+    # ── GOLD DIVIDER ─────────────────────────────────────────────────────────
+    st.markdown("""
+    <div style="display:flex; align-items:center; gap:16px; margin:52px auto; max-width:320px;">
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+        <span style="color:#c9a84c; font-size:1rem;">✦</span>
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
     </div>
     """, unsafe_allow_html=True)
 
     # ── OUR PROMISE ──────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="gold-divider">
-        <div class="gold-divider-line"></div>
-        <span class="gold-divider-icon">✦</span>
-        <div class="gold-divider-line"></div>
-    </div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:2.4rem; text-align:center;
+               color:#c2185b; margin-bottom:6px;">Our Promise to You</h2>
+    <p style="text-align:center; color:#aaa; font-size:0.95rem; margin-bottom:40px;">
+        Three commitments we make to every member
+    </p>
     """, unsafe_allow_html=True)
-
-    st.markdown('<h2 class="section-title">Our Promise to You</h2>', unsafe_allow_html=True)
-    st.markdown('<p class="section-subtitle" style="color:#aaa;">Three commitments we make to every member</p>', unsafe_allow_html=True)
 
     pc = st.columns(3)
     promises = [
@@ -1308,19 +1318,35 @@ def show_home():
     for i, (icon, title, desc) in enumerate(promises):
         with pc[i]:
             st.markdown(f"""
-            <div class="promise-card">
-                <div class="promise-icon-wrap">{icon}</div>
-                <h3 style="font-family:'Playfair Display',serif; color:#c2185b; font-size:1.2rem; margin-bottom:12px;">{title}</h3>
-                <p style="color:#777; font-size:0.88rem; line-height:1.75;">{desc}</p>
+            <div style="background:white; border-radius:24px; padding:36px 24px; text-align:center;
+                        box-shadow:0 8px 32px rgba(194,24,91,0.09);
+                        border-top:3px solid #c9a84c; height:100%;
+                        transition:transform 0.3s ease;">
+                <div style="width:68px; height:68px; border-radius:50%;
+                            background:linear-gradient(135deg,#fff0f3,#fde8ee);
+                            border:2px solid rgba(201,168,76,0.3);
+                            display:flex; align-items:center; justify-content:center;
+                            font-size:1.7rem; margin:0 auto 18px;">
+                    {icon}
+                </div>
+                <h3 style="font-family:'Playfair Display',serif; color:#c2185b;
+                           font-size:1.15rem; margin-bottom:10px;">{title}</h3>
+                <p style="color:#777; font-size:0.87rem; line-height:1.75; margin:0;">{desc}</p>
             </div>
             """, unsafe_allow_html=True)
 
     # ── HOW IT WORKS ─────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="steps-section">
-        <p style="text-align:center; color:#c9a84c; font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; position:relative; z-index:1;">Simple · Warm · Meaningful</p>
-        <h2 class="section-title-light" style="margin-bottom:6px;">How ShaadiZone Works</h2>
-        <p class="section-subtitle-light">Three gentle steps to finding your person</p>
+    <div style="background:linear-gradient(160deg,#1a0010 0%,#2d0018 100%);
+                padding:64px 40px 48px; margin:52px 0 0; border-radius:28px;">
+        <p style="text-align:center; color:#c9a84c; font-size:0.78rem; letter-spacing:3px;
+                  text-transform:uppercase; margin-bottom:10px;">Simple · Warm · Meaningful</p>
+        <h2 style="font-family:'Playfair Display',serif; font-size:2.3rem; text-align:center;
+                   color:white; margin-bottom:6px;">How ShaadiZone Works</h2>
+        <p style="text-align:center; color:rgba(255,255,255,0.4); font-size:0.88rem;
+                  text-transform:uppercase; letter-spacing:2px; margin-bottom:40px;">
+            Three gentle steps to finding your person
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1336,25 +1362,31 @@ def show_home():
     for i, (num, icon, title, desc) in enumerate(steps):
         with sc[i]:
             st.markdown(f"""
-            <div class="step-card">
-                <div class="step-num">{num}</div>
-                <span class="step-icon">{icon}</span>
-                <p class="step-title">{title}</p>
-                <p class="step-desc">{desc}</p>
+            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+                        border-radius:20px; padding:32px 20px; text-align:center;
+                        margin-top:-32px;">
+                <div style="font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:700;
+                            color:rgba(201,168,76,0.25); line-height:1; margin-bottom:4px;">{num}</div>
+                <div style="font-size:2rem; margin-bottom:14px;">{icon}</div>
+                <p style="font-family:'Playfair Display',serif; color:white; font-size:1.1rem;
+                          margin-bottom:10px; font-weight:600;">{title}</p>
+                <p style="color:rgba(255,255,255,0.55); font-size:0.86rem; line-height:1.7; margin:0;">{desc}</p>
             </div>
             """, unsafe_allow_html=True)
 
     # ── LOVE STORIES ─────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="gold-divider">
-        <div class="gold-divider-line"></div>
-        <span class="gold-divider-icon">💖</span>
-        <div class="gold-divider-line"></div>
+    <div style="display:flex; align-items:center; gap:16px; margin:60px auto 0; max-width:320px;">
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+        <span style="color:#c9a84c; font-size:1rem;">💖</span>
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
     </div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:2.4rem; text-align:center;
+               color:#c2185b; margin:20px 0 6px;">Real Love Stories</h2>
+    <p style="text-align:center; color:#aaa; font-size:0.95rem; margin-bottom:36px;">
+        They were brave enough to hope — and love found them
+    </p>
     """, unsafe_allow_html=True)
-
-    st.markdown('<h2 class="section-title">Real Love Stories</h2>', unsafe_allow_html=True)
-    st.markdown('<p class="section-subtitle" style="color:#aaa;">They were brave enough to hope — and love found them</p>', unsafe_allow_html=True)
 
     tc = st.columns(3)
     stories = [
@@ -1374,27 +1406,39 @@ def show_home():
     for i, (quote, name, city, avatar, status) in enumerate(stories):
         with tc[i]:
             st.markdown(f"""
-            <div class="story-card-big">
-                <p class="story-text">{quote}</p>
-                <div class="story-author-row">
-                    <div class="story-avatar">{avatar}</div>
+            <div style="background:white; border-radius:24px; padding:36px 28px 28px;
+                        box-shadow:0 12px 40px rgba(194,24,91,0.09);
+                        border:1px solid rgba(201,168,76,0.12); position:relative; height:100%;">
+                <div style="font-family:'Playfair Display',serif; font-size:5rem; color:#f8bbd0;
+                            position:absolute; top:-8px; left:20px; line-height:1; opacity:0.6;">&#8220;</div>
+                <p style="color:#444; font-style:italic; line-height:1.85; font-size:0.97rem;
+                          margin-top:24px; margin-bottom:22px;">{quote}</p>
+                <div style="display:flex; align-items:center; gap:12px;
+                            padding-top:16px; border-top:1px solid #f8eef2;">
+                    <div style="background:linear-gradient(135deg,#e91e63,#c2185b); border-radius:50%;
+                                width:44px; height:44px; display:flex; align-items:center;
+                                justify-content:center; font-size:1.4rem; flex-shrink:0;">{avatar}</div>
                     <div>
-                        <div class="story-name">{name}</div>
-                        <div class="story-city">{city} · {status}</div>
+                        <div style="font-weight:600; color:#c2185b; font-size:0.92rem;">{name}</div>
+                        <div style="color:#bbb; font-size:0.78rem; margin-top:1px;">{city} · {status}</div>
                     </div>
-                    <div class="story-hearts">♥ ♥ ♥</div>
+                    <div style="margin-left:auto; color:#f8bbd0; letter-spacing:3px;">♥ ♥ ♥</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
 
     # ── FINAL CTA ─────────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="cta-final">
-        <p style="color:#c9a84c; font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; position:relative; z-index:1;">Your Story is Waiting</p>
-        <h2 class="cta-final-heading">
+    <div style="background:linear-gradient(135deg,#3d0020 0%,#6b0030 40%,#c2185b 100%);
+                padding:80px 40px; text-align:center; border-radius:28px; margin:52px 0 0;">
+        <p style="color:#c9a84c; font-size:0.78rem; letter-spacing:3px;
+                  text-transform:uppercase; margin-bottom:16px;">Your Story is Waiting</p>
+        <h2 style="font-family:'Playfair Display',serif; font-size:3.2rem; font-weight:700;
+                   color:white; line-height:1.2; margin-bottom:16px;">
             The One Who Understands You<br>is Already Here.
         </h2>
-        <p class="cta-final-sub">
+        <p style="color:rgba(255,255,255,0.6); font-size:1rem; max-width:460px;
+                  margin:0 auto; line-height:1.75;">
             Thousands of specially-abled souls — just like you —
             are hoping, dreaming, and waiting. Take the first step.
         </p>
@@ -1403,16 +1447,25 @@ def show_home():
 
     final_col = st.columns([3, 2, 3])
     with final_col[1]:
+        st.markdown("<div style='margin-top:20px;'>", unsafe_allow_html=True)
         if st.button("💖 Create My Free Profile", type="primary", use_container_width=True, key="final_cta"):
             nav_to("create")
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    # ── LUXURY FOOTER ─────────────────────────────────────────────────────────
+    # ── FOOTER ────────────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="footer-luxury">
-        <div class="footer-logo">ShaadiZone</div>
-        <div class="footer-tagline-lux">Inclusive Matrimony · Built with Love</div>
-        <div class="footer-gold-rule"></div>
-        <div class="footer-copy">© 2026 ShaadiZone · Founded by Animesh · Every heart matters.</div>
+    <div style="background:#0d0008; padding:56px 40px 32px; text-align:center; margin-top:0;">
+        <div style="font-family:'Playfair Display',serif; font-size:2rem;
+                    font-weight:700; color:#c9a84c; margin-bottom:6px;">ShaadiZone</div>
+        <div style="color:rgba(255,255,255,0.35); font-size:0.78rem; letter-spacing:2.5px;
+                    text-transform:uppercase; margin-bottom:28px;">
+            Inclusive Matrimony · Built with Love
+        </div>
+        <div style="height:1px; background:linear-gradient(90deg,transparent,rgba(201,168,76,0.35),transparent);
+                    max-width:380px; margin:0 auto 24px;"></div>
+        <div style="color:rgba(255,255,255,0.18); font-size:0.76rem; letter-spacing:1px;">
+            © 2026 ShaadiZone · Founded by Animesh · Every heart matters.
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1446,7 +1499,7 @@ def show_profiles():
     # Result count
     count_col = st.columns([1, 2, 1])
     with count_col[1]:
-        st.markdown(f"<div style='text-align:center; margin-bottom:28px;'><span class='result-count'>💖 {len(profiles)} beautiful soul{'s' if len(profiles) != 1 else ''} found</span></div>", unsafe_allow_html=True)
+        st.markdown(f"<div style='text-align:center; margin-bottom:28px;'><span style='background:linear-gradient(135deg,#fff0f3,#ffe4e9); border:1.5px solid #f8bbd0; color:#c2185b; padding:6px 20px; border-radius:20px; font-size:0.88rem; font-weight:500;'>💖 {len(profiles)} beautiful soul{'s' if len(profiles) != 1 else ''} found</span></div>", unsafe_allow_html=True)
 
     if not profiles:
         st.markdown("""
@@ -1463,17 +1516,35 @@ def show_profiles():
         with cols[i % 3]:
             verified_html = '<span class="verified-pill">✓ Verified</span>' if profile['verified'] else ''
             photo = profile.get('photo', get_avatar_url(profile['name']))
+            about_snippet = profile.get('about','')[:72] + '…' if len(profile.get('about','')) > 72 else profile.get('about','')
             st.markdown(f"""
-            <div class="profile-card">
-                <div class="profile-image-area" style="padding:28px 28px 22px;">
+            <div style="background:white; border-radius:22px; overflow:hidden; margin-bottom:8px;
+                        box-shadow:0 8px 28px rgba(233,30,99,0.09);
+                        border:1.5px solid rgba(233,30,99,0.08);">
+                <div style="background:linear-gradient(135deg,#e91e63 0%,#c2185b 60%,#ad1457 100%);
+                            padding:28px; text-align:center; position:relative;">
                     {verified_html}
-                    <img src="{photo}" class="profile-photo" alt="{profile['name']}" />
+                    <img src="{photo}" style="width:88px; height:88px; border-radius:50%;
+                         object-fit:cover; border:3px solid rgba(255,255,255,0.55);
+                         box-shadow:0 4px 18px rgba(0,0,0,0.22); display:block; margin:0 auto;"
+                         alt="{profile['name']}" />
                 </div>
-                <div class="profile-body">
-                    <div class="profile-name">{profile['name']}</div>
-                    <div class="profile-meta">{profile['age']} yrs &nbsp;·&nbsp; {profile['location']}</div>
-                    <div class="profile-job">{profile['profession']} &nbsp;·&nbsp; {profile['education']}</div>
-                    <span class="disability-badge">♿ {profile.get('disability', 'N/A')}</span>
+                <div style="padding:20px 22px 18px;">
+                    <div style="color:#c2185b; font-family:'Playfair Display',serif;
+                                font-size:1.25rem; font-weight:600; margin-bottom:3px;">{profile['name']}</div>
+                    <div style="color:#777; font-size:0.88rem; margin-bottom:3px;">
+                        {profile['age']} yrs &nbsp;·&nbsp; {profile['location']}
+                    </div>
+                    <div style="color:#555; font-size:0.83rem; margin-bottom:10px;">
+                        {profile['profession']} &nbsp;·&nbsp; {profile['education']}
+                    </div>
+                    <p style="color:#888; font-size:0.82rem; font-style:italic;
+                              line-height:1.55; margin-bottom:12px;">{about_snippet}</p>
+                    <span style="background:linear-gradient(135deg,#fff0f3,#ffe4e9);
+                                 border:1.5px solid #f8bbd0; color:#c2185b; padding:4px 12px;
+                                 border-radius:14px; font-size:0.76rem; font-weight:500;">
+                        ♿ {profile.get('disability','N/A')}
+                    </span>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -1823,8 +1894,14 @@ def show_matches():
                     {profile['age']} yrs &nbsp;·&nbsp; {profile['location']} &nbsp;·&nbsp;
                     {profile['profession']} &nbsp;·&nbsp; {profile['education']}
                 </div>
-                <span class="disability-badge">♿ {profile.get('disability','N/A')}</span>
-                <span class="match-tag {tag_cls}">&nbsp;{tag_emoji} {tag_text}&nbsp;</span>
+                <span style="background:linear-gradient(135deg,#fff0f3,#ffe4e9); border:1.5px solid #f8bbd0;
+                             color:#c2185b; padding:4px 10px; border-radius:14px;
+                             font-size:0.76rem; font-weight:500;">♿ {profile.get('disability','N/A')}</span>
+                <span style="display:inline-block; padding:3px 10px; border-radius:12px; font-size:0.72rem;
+                             font-weight:600; margin-left:6px;
+                             background:{'#e8f5e9' if score>=80 else '#fff8e1' if score>=60 else '#fce4ec'};
+                             color:{'#2e7d32' if score>=80 else '#f57f17' if score>=60 else '#c2185b'};">
+                    {tag_emoji} {tag_text}</span>
                 <div style="margin-top:14px;">{factor_html}</div>
             </div>
             <div class="match-score-block">
