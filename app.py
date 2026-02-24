@@ -566,6 +566,520 @@ st.markdown("""
         margin-bottom: 36px;
     }
 
+    /* ─── LANDING: HERO CINEMATIC ─── */
+    .hero-cinematic {
+        background: linear-gradient(160deg, #1a0010 0%, #3d0020 30%, #6b0030 60%, #c2185b 100%);
+        min-height: 96vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 40px 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-cinematic::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .hero-cinematic::after {
+        content: '';
+        position: absolute;
+        bottom: -2px; left: 0; right: 0;
+        height: 80px;
+        background: linear-gradient(160deg, #fff0f3 0%, #fde8ee 40%, #fff5f7 100%);
+        clip-path: ellipse(60% 100% at 50% 100%);
+    }
+
+    /* Floating orbs */
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.18;
+        animation: orbFloat 18s ease-in-out infinite;
+    }
+    .orb1 { width:400px; height:400px; background:#e91e63; top:-100px; left:-120px; animation-delay:0s; }
+    .orb2 { width:300px; height:300px; background:#c9a84c; bottom:-80px; right:-80px; animation-delay:5s; }
+    .orb3 { width:250px; height:250px; background:#ad1457; top:30%; right:5%; animation-delay:10s; }
+
+    @keyframes orbFloat {
+        0%,100% { transform: translate(0,0) scale(1); }
+        50%      { transform: translate(20px,-30px) scale(1.08); }
+    }
+
+    /* Floating petals */
+    .petal {
+        position: absolute;
+        font-size: 1.6rem;
+        opacity: 0.18;
+        animation: petalDrift 15s ease-in-out infinite;
+    }
+    .petal:nth-child(1) { top:10%; left:5%;  animation-delay:0s;  font-size:1.2rem; }
+    .petal:nth-child(2) { top:20%; right:6%; animation-delay:3s;  font-size:1.8rem; }
+    .petal:nth-child(3) { top:55%; left:3%;  animation-delay:6s;  font-size:1.4rem; }
+    .petal:nth-child(4) { top:70%; right:8%; animation-delay:9s;  font-size:1rem; }
+    .petal:nth-child(5) { top:38%; left:8%;  animation-delay:12s; font-size:2rem; }
+
+    @keyframes petalDrift {
+        0%,100% { transform: translateY(0) rotate(0deg);  opacity: 0.18; }
+        50%      { transform: translateY(-25px) rotate(15deg); opacity: 0.28; }
+    }
+
+    /* Gold script */
+    .gold-script {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #c9a84c;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .gold-script::before,
+    .gold-script::after {
+        content: '—';
+        margin: 0 12px;
+        opacity: 0.6;
+    }
+
+    /* Main headline */
+    .hero-headline {
+        font-family: 'Playfair Display', serif;
+        font-size: 5.5rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 22px;
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-headline .gold-word {
+        color: #c9a84c;
+        font-style: italic;
+    }
+
+    .hero-tagline-new {
+        font-size: 1.15rem;
+        color: rgba(255,255,255,0.72);
+        line-height: 1.7;
+        max-width: 560px;
+        margin: 0 auto 36px;
+        position: relative;
+        z-index: 2;
+        font-weight: 300;
+    }
+
+    .hero-cta-group {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 56px;
+        flex-wrap: wrap;
+    }
+
+    .btn-gold {
+        background: linear-gradient(135deg, #c9a84c, #a8863c);
+        color: #1a0010 !important;
+        border: none;
+        padding: 16px 40px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        box-shadow: 0 8px 28px rgba(201,168,76,0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn-ghost {
+        background: rgba(255,255,255,0.08);
+        color: white !important;
+        border: 1.5px solid rgba(255,255,255,0.3);
+        padding: 15px 38px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    /* Hero stats */
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 36px;
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .hero-stat {
+        flex: 1;
+        text-align: center;
+        padding: 0 24px;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stat:last-child { border-right: none; }
+
+    .hero-stat-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #c9a84c;
+    }
+
+    .hero-stat-lbl {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.5);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-top: 4px;
+    }
+
+    /* ─── GOLD DIVIDER ─── */
+    .gold-divider {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 56px auto;
+        max-width: 340px;
+    }
+
+    .gold-divider-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+    }
+
+    .gold-divider-icon {
+        color: #c9a84c;
+        font-size: 1.1rem;
+        opacity: 0.8;
+    }
+
+    /* ─── BELIEF STRIP ─── */
+    .belief-strip {
+        background: linear-gradient(135deg, #2d0018, #4a0028);
+        padding: 72px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .belief-strip::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    }
+
+    .belief-quote {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.4rem;
+        font-style: italic;
+        color: white;
+        line-height: 1.4;
+        max-width: 820px;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.3px;
+    }
+
+    .belief-quote .gold-em { color: #c9a84c; }
+
+    .belief-sub {
+        color: rgba(255,255,255,0.45);
+        font-size: 0.88rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ─── PROMISE CARDS ─── */
+    .promise-card {
+        background: white;
+        border-radius: 28px;
+        padding: 40px 28px;
+        text-align: center;
+        box-shadow: 0 12px 40px rgba(193,18,91,0.08);
+        border: 1px solid rgba(201,168,76,0.15);
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promise-card::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #c9a84c, #e91e63, #c9a84c);
+    }
+
+    .promise-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 24px 60px rgba(193,18,91,0.14);
+    }
+
+    .promise-icon-wrap {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #fff0f3, #fde8ee);
+        border: 2px solid rgba(201,168,76,0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 20px;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .steps-section {
+        background: linear-gradient(160deg, #1a0010 0%, #2d0018 100%);
+        padding: 80px 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .steps-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    }
+
+    .step-card {
+        text-align: center;
+        padding: 32px 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .step-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: rgba(201,168,76,0.2);
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .step-icon {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    .step-title {
+        font-family: 'Playfair Display', serif;
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .step-desc { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.7; }
+
+    .step-connector {
+        position: absolute;
+        top: 48px;
+        right: -20px;
+        color: rgba(201,168,76,0.3);
+        font-size: 1.4rem;
+        z-index: 2;
+    }
+
+    /* ─── TESTIMONIAL CINEMATIC ─── */
+    .story-card-big {
+        background: white;
+        border-radius: 28px;
+        padding: 44px 36px 36px;
+        box-shadow: 0 16px 50px rgba(193,18,91,0.10);
+        border: 1px solid rgba(201,168,76,0.12);
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        transition: all 0.4s ease;
+    }
+
+    .story-card-big:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 64px rgba(193,18,91,0.16);
+    }
+
+    .story-card-big::before {
+        content: '\201C';
+        font-family: 'Playfair Display', serif;
+        font-size: 9rem;
+        color: #f8bbd0;
+        position: absolute;
+        top: -20px;
+        left: 24px;
+        line-height: 1;
+        opacity: 0.5;
+    }
+
+    .story-text {
+        font-size: 1.05rem;
+        color: #444;
+        font-style: italic;
+        line-height: 1.85;
+        margin-top: 32px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .story-author-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid #f8eef2;
+    }
+
+    .story-avatar {
+        font-size: 2.2rem;
+        background: linear-gradient(135deg, #e91e63, #c2185b);
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .story-name { font-weight: 600; color: #c2185b; font-size: 0.95rem; }
+    .story-city { color: #bbb; font-size: 0.8rem; margin-top: 1px; }
+
+    .story-hearts {
+        margin-left: auto;
+        color: #f8bbd0;
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    /* ─── CTA FINAL ─── */
+    .cta-final {
+        background: linear-gradient(135deg, #3d0020 0%, #6b0030 40%, #c2185b 100%);
+        padding: 100px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-final::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+
+    .cta-final-heading {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.8rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .cta-final-sub {
+        color: rgba(255,255,255,0.65);
+        font-size: 1.05rem;
+        max-width: 500px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ─── FOOTER LUXURY ─── */
+    .footer-luxury {
+        background: #0d0008;
+        color: white;
+        padding: 64px 40px 32px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #c9a84c;
+        margin-bottom: 6px;
+    }
+
+    .footer-tagline-lux {
+        color: rgba(255,255,255,0.4);
+        font-size: 0.82rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+    }
+
+    .footer-gold-rule {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+        margin: 28px auto;
+        max-width: 400px;
+    }
+
+    .footer-copy {
+        color: rgba(255,255,255,0.2);
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+    }
+
+    /* Existing section title tweaks */
+    .section-title-light {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.6rem;
+        text-align: center;
+        margin-bottom: 8px;
+        color: white;
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle-light {
+        text-align: center;
+        color: rgba(255,255,255,0.45);
+        font-size: 0.95rem;
+        margin-bottom: 48px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
     /* Hide Streamlit chrome */
     #MainMenu { visibility: hidden; }
     footer { visibility: hidden; }
@@ -635,133 +1149,211 @@ with nav_cols[4]:
 
 # ─── HOME PAGE ───────────────────────────────────────────────────────────────
 def show_home():
-    # Hero
-    st.markdown(f"""
-    <div class="hero">
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌺</span>
-        <span class="flower">🌹</span>
-        <span class="flower">🌻</span>
 
-        <h1>💖 ShaadiZone 💖</h1>
-        <p class="hero-subtitle">Inclusive Matrimony for Specially-Abled</p>
-        <p class="hero-tagline">Where Every Heart Deserves Love 💕</p>
+    # ── CINEMATIC HERO ───────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="hero-cinematic">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+        <span class="petal">🌸</span>
+        <span class="petal">🌹</span>
+        <span class="petal">🌷</span>
+        <span class="petal">💮</span>
+        <span class="petal">🌺</span>
 
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">10,000+</div>
-                <div class="stat-label">Special Members</div>
+        <p class="gold-script">India's Most Inclusive Matrimony Platform</p>
+
+        <h1 class="hero-headline">
+            Every Heart Deserves<br>
+            to be <span class="gold-word">Found.</span>
+        </h1>
+
+        <p class="hero-tagline-new">
+            We built ShaadiZone because love doesn't ask if you can walk, see, or hear.
+            It only asks if you're ready — and you are.
+        </p>
+
+        <div class="hero-cta-group">
+            <span style="cursor:pointer;" id="cta-join">
+                <span class="btn-gold">✦ Begin Your Journey</span>
+            </span>
+            <span style="cursor:pointer;" id="cta-browse">
+                <span class="btn-ghost">Browse Members</span>
+            </span>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-num">10,000+</div>
+                <div class="hero-stat-lbl">Members</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Love Stories</div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">500+</div>
+                <div class="hero-stat-lbl">Unions</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Happy Couples</div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">200+</div>
+                <div class="hero-stat-lbl">Weddings</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Support</div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-lbl">Free to Join</div>
             </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # CTA strip
-    cta_col = st.columns([3, 2, 3])
-    with cta_col[1]:
-        st.markdown("<div style='margin-top:28px;'>", unsafe_allow_html=True)
-        if st.button("💖 Create Free Profile", type="primary", use_container_width=True):
+    # Hidden Streamlit buttons behind the HTML CTAs
+    cta1, cta2, cta3 = st.columns([3, 1, 3])
+    with cta1:
+        if st.button("✦ Begin Your Journey", type="primary", use_container_width=True, key="hero_join"):
             nav_to("create")
-        st.markdown("</div>", unsafe_allow_html=True)
+    with cta3:
+        if st.button("Browse Members", use_container_width=True, key="hero_browse"):
+            nav_to("profiles")
 
-    # Mission
+    # ── BELIEF STRIP ─────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="mission-box">
-        <h2 style="font-family:'Playfair Display',serif; color:#c2185b; font-size:2rem; margin-bottom:14px;">
-            Our Beautiful Mission
+    <div class="belief-strip">
+        <p class="belief-quote">
+            "Love is not something you <span class="gold-em">earn</span>
+            through ability — it is something you <span class="gold-em">deserve</span>
+            through simply being."
+        </p>
+        <p class="belief-sub">— The ShaadiZone Belief</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── OUR PROMISE ──────────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="gold-divider">
+        <div class="gold-divider-line"></div>
+        <span class="gold-divider-icon">✦</span>
+        <div class="gold-divider-line"></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown('<h2 class="section-title">Our Promise to You</h2>', unsafe_allow_html=True)
+    st.markdown('<p class="section-subtitle" style="color:#aaa;">Three commitments we make to every member</p>', unsafe_allow_html=True)
+
+    pc = st.columns(3)
+    promises = [
+        ("🛡️", "You Are Safe Here",
+         "Every profile is manually verified. Every interaction is monitored. This is a space built on trust — because you deserve nothing less."),
+        ("💛", "You Are Seen Here",
+         "We don't reduce you to your disability. Your dreams, your career, your laughter — your whole self is celebrated and honoured here."),
+        ("🔒", "You Are Never Alone",
+         "Our team is available 24/7. From profile help to emotional support — we walk this journey beside you, every single step."),
+    ]
+    for i, (icon, title, desc) in enumerate(promises):
+        with pc[i]:
+            st.markdown(f"""
+            <div class="promise-card">
+                <div class="promise-icon-wrap">{icon}</div>
+                <h3 style="font-family:'Playfair Display',serif; color:#c2185b; font-size:1.2rem; margin-bottom:12px;">{title}</h3>
+                <p style="color:#777; font-size:0.88rem; line-height:1.75;">{desc}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # ── HOW IT WORKS ─────────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="steps-section">
+        <p style="text-align:center; color:#c9a84c; font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; position:relative; z-index:1;">Simple · Warm · Meaningful</p>
+        <h2 class="section-title-light" style="margin-bottom:6px;">How ShaadiZone Works</h2>
+        <p class="section-subtitle-light">Three gentle steps to finding your person</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    sc = st.columns(3)
+    steps = [
+        ("01", "🌸", "Create Your Profile",
+         "Share your story in your own words. No labels, no boxes — just you, as you truly are. Takes 5 minutes."),
+        ("02", "💝", "Discover Your Matches",
+         "Our algorithm finds people who complement your world. Browse at your own pace, without pressure."),
+        ("03", "💍", "Begin Your Story",
+         "Send interest, connect, and let love unfold naturally. We're with you at every beautiful step."),
+    ]
+    for i, (num, icon, title, desc) in enumerate(steps):
+        with sc[i]:
+            st.markdown(f"""
+            <div class="step-card">
+                <div class="step-num">{num}</div>
+                <span class="step-icon">{icon}</span>
+                <p class="step-title">{title}</p>
+                <p class="step-desc">{desc}</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # ── LOVE STORIES ─────────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="gold-divider">
+        <div class="gold-divider-line"></div>
+        <span class="gold-divider-icon">💖</span>
+        <div class="gold-divider-line"></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown('<h2 class="section-title">Real Love Stories</h2>', unsafe_allow_html=True)
+    st.markdown('<p class="section-subtitle" style="color:#aaa;">They were brave enough to hope — and love found them</p>', unsafe_allow_html=True)
+
+    tc = st.columns(3)
+    stories = [
+        (
+            "I spent years believing no one could love me the way I am — in a wheelchair, dependent for so many things. ShaadiZone didn't just find me a partner. It gave me back my belief that I deserved to be loved.",
+            "Ananya S.", "Mumbai", "👩‍💻", "Married · March 2025"
+        ),
+        (
+            "I'm blind. I've heard a thousand times that I should be 'realistic' about love. My husband — whom I found here — says my blindness is the least interesting thing about me. That is everything.",
+            "Raj V.", "Delhi", "👨‍⚕️", "Married · August 2024"
+        ),
+        (
+            "Being deaf in a world that speaks can feel lonely beyond words. When Aditya sent me his first message here, he learned sign language first. ShaadiZone didn't just match us — it matched our souls.",
+            "Diya P.", "Ahmedabad", "👩‍🏫", "Engaged · January 2026"
+        ),
+    ]
+    for i, (quote, name, city, avatar, status) in enumerate(stories):
+        with tc[i]:
+            st.markdown(f"""
+            <div class="story-card-big">
+                <p class="story-text">{quote}</p>
+                <div class="story-author-row">
+                    <div class="story-avatar">{avatar}</div>
+                    <div>
+                        <div class="story-name">{name}</div>
+                        <div class="story-city">{city} · {status}</div>
+                    </div>
+                    <div class="story-hearts">♥ ♥ ♥</div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # ── FINAL CTA ─────────────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="cta-final">
+        <p style="color:#c9a84c; font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:16px; position:relative; z-index:1;">Your Story is Waiting</p>
+        <h2 class="cta-final-heading">
+            The One Who Understands You<br>is Already Here.
         </h2>
-        <p style="font-size:1.08rem; color:#666; line-height:1.85; max-width:660px; margin:0 auto;">
-            ShaadiZone is a loving home for <strong>specially-abled individuals</strong>.
-            We believe true love has no boundaries — every heart deserves its happily ever after,
-            filled with understanding, respect, and joy.
+        <p class="cta-final-sub">
+            Thousands of specially-abled souls — just like you —
+            are hoping, dreaming, and waiting. Take the first step.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Why join
-    st.markdown('<h2 class="section-title">Why Join ShaadiZone?</h2>', unsafe_allow_html=True)
+    final_col = st.columns([3, 2, 3])
+    with final_col[1]:
+        if st.button("💖 Create My Free Profile", type="primary", use_container_width=True, key="final_cta"):
+            nav_to("create")
 
-    cols = st.columns(4)
-    features = [
-        ("🌷", "Inclusive Platform",    "Built exclusively for specially-abled individuals — you belong here."),
-        ("✅", "Verified Profiles",     "Every profile is reviewed and verified for a safe, genuine experience."),
-        ("💕", "Loving Community",      "A warm, supportive space where compassion comes first."),
-        ("🎉", "Free to Join",          "No hidden charges — love shouldn't have a price tag."),
-    ]
-    for i, (icon, title, desc) in enumerate(features):
-        with cols[i]:
-            st.markdown(f"""
-            <div class="elegant-card">
-                <span class="card-icon">{icon}</span>
-                <h4 style="color:#c2185b; margin-bottom:8px; font-size:1rem;">{title}</h4>
-                <p style="color:#888; font-size:0.85rem; line-height:1.6;">{desc}</p>
-            </div>
-            """, unsafe_allow_html=True)
-
-    st.markdown('<div class="flower-divider">🌸 🌷 🌹 🌺 🌻</div>', unsafe_allow_html=True)
-
-    # Who can join
-    st.markdown('<h2 class="section-title">Who Can Join?</h2>', unsafe_allow_html=True)
-    st.markdown('<p class="section-subtitle">Open to all specially-abled individuals across India</p>', unsafe_allow_html=True)
-
-    cols = st.columns(4)
-    categories = [
-        ("🦽", "Wheelchair Users",   "#e91e63"),
-        ("👁️", "Visually Impaired",  "#c2185b"),
-        ("👂", "Hearing Impaired",   "#ad1457"),
-        ("💪", "Physically Challenged", "#880e4f"),
-    ]
-    for i, (icon, title, color) in enumerate(categories):
-        with cols[i]:
-            st.markdown(f"""
-            <div class="elegant-card">
-                <span class="card-icon">{icon}</span>
-                <h4 style="color:{color}; font-size:0.95rem;">{title}</h4>
-            </div>
-            """, unsafe_allow_html=True)
-
-    st.markdown('<div class="flower-divider">🌸 🌷 🌹 🌺 🌻</div>', unsafe_allow_html=True)
-
-    # Success stories
-    st.markdown('<h2 class="section-title">Love Stories</h2>', unsafe_allow_html=True)
-
-    cols = st.columns(3)
-    stories = [
-        ("Found love beyond my disability! My wife accepts me completely and I couldn't be happier.",     "Ananya & Raj",   "Mumbai"),
-        ("As a blind person, I found someone who truly sees my heart. ShaadiZone made it possible!",      "Raj & Priya",    "Delhi"),
-        ("Despite being deaf, I heard the wedding bells! Thank you ShaadiZone for this miracle.",         "Diya & Aditya",  "Ahmedabad"),
-    ]
-    for i, (quote, names, city) in enumerate(stories):
-        with cols[i]:
-            st.markdown(f"""
-            <div class="testimonial-card">
-                <p class="testimonial-text">{quote}</p>
-                <p class="testimonial-author">— {names} · {city} 💖</p>
-            </div>
-            """, unsafe_allow_html=True)
-
-    # Footer
+    # ── LUXURY FOOTER ─────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="footer">
-        <div class="footer-inner">
-            <p class="footer-title">💖 ShaadiZone 💖</p>
-            <p style="opacity:0.9; font-size:1rem; margin-top:4px;">Inclusive Matrimony for Specially-Abled</p>
-            <div style="margin:20px 0; opacity:0.5; letter-spacing:8px; font-size:1.1rem;">🌸 🌷 🌹</div>
-            <p style="opacity:0.75; font-size:0.8rem;">© 2026 ShaadiZone · Founded by Animesh · Made with 💖</p>
-        </div>
+    <div class="footer-luxury">
+        <div class="footer-logo">ShaadiZone</div>
+        <div class="footer-tagline-lux">Inclusive Matrimony · Built with Love</div>
+        <div class="footer-gold-rule"></div>
+        <div class="footer-copy">© 2026 ShaadiZone · Founded by Animesh · Every heart matters.</div>
     </div>
     """, unsafe_allow_html=True)
 
