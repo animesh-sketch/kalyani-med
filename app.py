@@ -1482,6 +1482,186 @@ def show_home():
             </div>
             """, unsafe_allow_html=True)
 
+    # ── WEDDING ILLUSTRATION ──────────────────────────────────────────────────
+    st.markdown("""
+    <div style="display:flex; align-items:center; gap:16px; margin:60px auto 0; max-width:320px;">
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+        <span style="color:#c9a84c; font-size:1.1rem;">&#x1F48D;</span>
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+    </div>
+    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; text-align:center;
+               color:#c2185b; margin:20px 0 6px;">A Moment of Love</h2>
+    <p style="text-align:center; color:#aaa; font-size:0.9rem; margin-bottom:32px;">
+        Love has no barriers — it only has beginnings
+    </p>
+    <div style="background:linear-gradient(160deg,#1a0010 0%,#2d0018 100%);
+                border-radius:28px; padding:20px; margin:0 auto;
+                max-width:820px; box-shadow:0 20px 60px rgba(0,0,0,0.45);">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" style="width:100%;height:auto;display:block;">
+        <defs>
+          <linearGradient id="svgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1a0010"/>
+            <stop offset="50%" stop-color="#3d0020"/>
+            <stop offset="100%" stop-color="#6b0030"/>
+          </linearGradient>
+          <radialGradient id="svgCG" cx="50%" cy="62%" r="30%">
+            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="svgHG" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="800" height="440" fill="url(#svgBg)"/>
+        <rect width="800" height="440" fill="url(#svgCG)"/>
+        <!-- Bokeh -->
+        <circle cx="80" cy="70" r="35" fill="#c9a84c" opacity="0.03"/>
+        <circle cx="720" cy="55" r="50" fill="#e91e63" opacity="0.04"/>
+        <circle cx="140" cy="380" r="28" fill="#c9a84c" opacity="0.04"/>
+        <circle cx="660" cy="395" r="38" fill="#e91e63" opacity="0.04"/>
+        <!-- Floating hearts -->
+        <text x="100" y="92" font-size="22" fill="#c9a84c" opacity="0.42">&#x2665;</text>
+        <text x="688" y="76" font-size="18" fill="#e91e63" opacity="0.38">&#x2665;</text>
+        <text x="346" y="54" font-size="26" fill="#c9a84c" opacity="0.32">&#x2665;</text>
+        <text x="456" y="74" font-size="15" fill="#f8bbd0" opacity="0.38">&#x2665;</text>
+        <text x="183" y="177" font-size="13" fill="#c9a84c" opacity="0.26">&#x2665;</text>
+        <text x="598" y="157" font-size="11" fill="#e91e63" opacity="0.28">&#x2665;</text>
+        <text x="308" y="392" font-size="10" fill="#c9a84c" opacity="0.23">&#x2665;</text>
+        <text x="488" y="397" font-size="12" fill="#e91e63" opacity="0.23">&#x2665;</text>
+        <!-- Rose petals -->
+        <circle cx="293" cy="127" r="7" fill="#e91e63" opacity="0.22"/>
+        <circle cx="503" cy="110" r="6" fill="#f06292" opacity="0.22"/>
+        <circle cx="353" cy="377" r="8" fill="#c9a84c" opacity="0.16"/>
+        <circle cx="463" cy="387" r="6" fill="#e91e63" opacity="0.16"/>
+
+        <!-- === GROOM (left, facing right) === -->
+        <!-- Head -->
+        <circle cx="225" cy="118" r="33" fill="#c2185b" opacity="0.88"/>
+        <!-- Hair -->
+        <path d="M 197 108 Q 210 92 225 90 Q 240 92 253 108 L 258 116 Q 245 100 225 98 Q 205 100 192 116 Z" fill="#3d0020" opacity="0.8"/>
+        <!-- Eyes -->
+        <circle cx="215" cy="114" r="4" fill="rgba(255,255,255,0.5)"/>
+        <circle cx="235" cy="114" r="4" fill="rgba(255,255,255,0.5)"/>
+        <circle cx="216" cy="115" r="2" fill="#2d0018"/>
+        <circle cx="236" cy="115" r="2" fill="#2d0018"/>
+        <!-- Smile -->
+        <path d="M 215 128 Q 225 137 235 128" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Suit -->
+        <path d="M 192 166 L 180 278 L 268 278 L 256 166 Z" fill="#2d0018"/>
+        <!-- Shirt -->
+        <path d="M 218 166 L 214 200 L 225 192 L 236 200 L 232 166 Z" fill="white" opacity="0.72"/>
+        <!-- Tie -->
+        <path d="M 222 168 L 219 202 L 225 210 L 231 202 L 228 168 Z" fill="#c9a84c" opacity="0.9"/>
+        <!-- Lapels -->
+        <path d="M 218 166 L 200 196 L 215 180 Z" fill="#3d0020"/>
+        <path d="M 232 166 L 250 196 L 235 180 Z" fill="#3d0020"/>
+        <!-- Right arm reaching to center -->
+        <path d="M 256 190 Q 320 220 378 247" stroke="#2d0018" stroke-width="15" fill="none" stroke-linecap="round"/>
+        <path d="M 256 190 Q 320 220 378 247" stroke="#c2185b" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.28"/>
+        <!-- Hand -->
+        <circle cx="380" cy="248" r="12" fill="#c2185b" opacity="0.82"/>
+        <!-- Left arm -->
+        <path d="M 194 185 L 155 252" stroke="#2d0018" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <!-- Legs -->
+        <path d="M 212 278 L 210 308 L 265 308" stroke="#2d0018" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <path d="M 250 308 L 272 324" stroke="#2d0018" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <!-- Groom wheelchair -->
+        <line x1="174" y1="274" x2="270" y2="274" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="200" y1="274" x2="200" y2="224" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="195" y1="224" x2="238" y2="224" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="270" y1="274" x2="293" y2="310" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="278" y1="316" x2="303" y2="316" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="300" cy="330" r="16" stroke="#c9a84c" stroke-width="3" fill="none"/>
+        <circle cx="300" cy="330" r="5" fill="#c9a84c"/>
+        <circle cx="174" cy="328" r="65" stroke="#c9a84c" stroke-width="3.5" fill="none"/>
+        <line x1="174" y1="263" x2="174" y2="393" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
+        <line x1="109" y1="328" x2="239" y2="328" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
+        <line x1="128" y1="282" x2="220" y2="374" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
+        <line x1="128" y1="374" x2="220" y2="282" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
+        <circle cx="174" cy="328" r="10" fill="#c9a84c"/>
+        <circle cx="174" cy="328" r="56" stroke="#c9a84c" stroke-width="1.8" fill="none" opacity="0.32"/>
+
+        <!-- === BRIDE (right, facing left) === -->
+        <!-- Veil -->
+        <path d="M 549 98 Q 575 84 601 98 L 618 178 Q 605 185 575 182 Q 545 185 532 178 Z" fill="white" opacity="0.42"/>
+        <!-- Head -->
+        <circle cx="575" cy="118" r="33" fill="#f8bbd0" opacity="0.95"/>
+        <!-- Hair bun -->
+        <path d="M 551 108 Q 560 92 575 89 Q 590 92 599 108" fill="#3d0020" opacity="0.55"/>
+        <circle cx="575" cy="87" r="9" fill="#3d0020" opacity="0.55"/>
+        <!-- Floral hair piece -->
+        <circle cx="586" cy="80" r="7" fill="#c9a84c" opacity="0.95"/>
+        <circle cx="591" cy="86" r="5" fill="#e91e63" opacity="0.85"/>
+        <circle cx="581" cy="74" r="5" fill="#e91e63" opacity="0.85"/>
+        <!-- Eyes -->
+        <circle cx="565" cy="114" r="4" fill="rgba(194,24,91,0.55)"/>
+        <circle cx="585" cy="114" r="4" fill="rgba(194,24,91,0.55)"/>
+        <circle cx="566" cy="115" r="2" fill="#3d0020"/>
+        <circle cx="586" cy="115" r="2" fill="#3d0020"/>
+        <!-- Smile -->
+        <path d="M 565 128 Q 575 137 585 128" stroke="rgba(194,24,91,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Dress bodice -->
+        <path d="M 550 166 L 545 228 L 575 220 L 605 228 L 600 166 Z" fill="white" opacity="0.88"/>
+        <!-- Neckline -->
+        <path d="M 560 166 Q 575 178 590 166" stroke="#f8bbd0" stroke-width="2" fill="none"/>
+        <!-- Skirt -->
+        <path d="M 545 228 L 516 292 L 632 292 L 605 228 Z" fill="white" opacity="0.82"/>
+        <!-- Lace detail -->
+        <path d="M 558 176 L 558 218 M 568 173 L 568 220 M 582 173 L 582 220 M 592 176 L 592 218" stroke="rgba(249,190,209,0.45)" stroke-width="1" fill="none"/>
+        <!-- Left arm to center -->
+        <path d="M 548 192 Q 488 220 422 248" stroke="white" stroke-width="13" fill="none" stroke-linecap="round" opacity="0.82"/>
+        <path d="M 548 192 Q 488 220 422 248" stroke="#f8bbd0" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.28"/>
+        <!-- Hand -->
+        <circle cx="420" cy="249" r="12" fill="#f8bbd0" opacity="0.95"/>
+        <!-- Right arm with bouquet -->
+        <path d="M 602 192 L 648 238" stroke="white" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.82"/>
+        <!-- Bouquet -->
+        <ellipse cx="652" cy="252" rx="27" ry="23" fill="#c2185b" opacity="0.45"/>
+        <circle cx="640" cy="242" r="14" fill="#e91e63" opacity="0.68"/>
+        <circle cx="662" cy="240" r="13" fill="#c2185b" opacity="0.72"/>
+        <circle cx="652" cy="232" r="13" fill="#ad1457" opacity="0.72"/>
+        <circle cx="647" cy="252" r="11" fill="#e91e63" opacity="0.62"/>
+        <circle cx="663" cy="252" r="10" fill="#c2185b" opacity="0.62"/>
+        <circle cx="648" cy="238" r="5" fill="white" opacity="0.6"/>
+        <circle cx="656" cy="244" r="4" fill="white" opacity="0.55"/>
+        <circle cx="644" cy="250" r="4" fill="white" opacity="0.5"/>
+        <path d="M 652 273 L 650 288" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M 640 275 Q 651 283 662 275" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Legs in dress -->
+        <path d="M 565 292 L 563 318 L 530 318" stroke="#f8eef2" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.75"/>
+        <path d="M 542 318 L 522 334" stroke="#f8eef2" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.75"/>
+        <!-- Bride wheelchair -->
+        <line x1="530" y1="285" x2="626" y2="285" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="600" y1="285" x2="600" y2="235" stroke="#c9a84c" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="562" y1="235" x2="605" y2="235" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="530" y1="285" x2="506" y2="316" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="498" y1="322" x2="522" y2="322" stroke="#c9a84c" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="500" cy="336" r="16" stroke="#c9a84c" stroke-width="3" fill="none"/>
+        <circle cx="500" cy="336" r="5" fill="#c9a84c"/>
+        <circle cx="626" cy="333" r="65" stroke="#c9a84c" stroke-width="3.5" fill="none"/>
+        <line x1="626" y1="268" x2="626" y2="398" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
+        <line x1="561" y1="333" x2="691" y2="333" stroke="#c9a84c" stroke-width="1.5" opacity="0.42"/>
+        <line x1="580" y1="287" x2="672" y2="379" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
+        <line x1="580" y1="379" x2="672" y2="287" stroke="#c9a84c" stroke-width="1.5" opacity="0.32"/>
+        <circle cx="626" cy="333" r="10" fill="#c9a84c"/>
+        <circle cx="626" cy="333" r="56" stroke="#c9a84c" stroke-width="1.8" fill="none" opacity="0.32"/>
+
+        <!-- === JOINED HANDS (center) === -->
+        <ellipse cx="400" cy="249" rx="58" ry="40" fill="url(#svgHG)"/>
+        <!-- Wedding rings -->
+        <circle cx="394" cy="245" r="8" stroke="#c9a84c" stroke-width="2.5" fill="none" opacity="0.9"/>
+        <circle cx="408" cy="248" r="6" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.85"/>
+        <!-- Heart -->
+        <text x="396" y="270" font-size="14" fill="#e91e63" opacity="0.82" font-family="Arial">&#x2665;</text>
+
+        <!-- Caption -->
+        <text x="400" y="413" font-family="Georgia,'Times New Roman',serif" font-size="19" font-style="italic" fill="#c9a84c" text-anchor="middle" opacity="0.9">Every Love Story is Beautiful</text>
+        <text x="400" y="432" font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)" text-anchor="middle">ShaadiZone &#xB7; Celebrating Every Love</text>
+      </svg>
+    </div>
+    """, unsafe_allow_html=True)
+
     # ── FINAL CTA ─────────────────────────────────────────────────────────────
     st.markdown("""
     <div style="background:linear-gradient(135deg,#3d0020 0%,#6b0030 40%,#c2185b 100%);
