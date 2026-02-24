@@ -1205,63 +1205,51 @@ with nav_cols[4]:
 # ─── HOME PAGE ───────────────────────────────────────────────────────────────
 def show_home():
 
-    # ── CINEMATIC HERO ───────────────────────────────────────────────────────
+    # ── HERO ─────────────────────────────────────────────────────────────────
     st.markdown("""
-    <div class="hero-cinematic">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="orb orb3"></div>
-        <span class="petal">🌸</span>
-        <span class="petal">🌹</span>
-        <span class="petal">🌷</span>
-        <span class="petal">💮</span>
-        <span class="petal">🌺</span>
-
-        <p class="gold-script">India's Most Inclusive Matrimony Platform</p>
-
-        <h1 class="hero-headline">
-            Every Heart Deserves<br>
-            to be <span class="gold-word">Found.</span>
+    <div style="
+        background: linear-gradient(160deg, #1a0010 0%, #3d0020 40%, #c2185b 100%);
+        padding: 80px 40px 60px;
+        text-align: center;
+        border-radius: 0 0 40px 40px;
+        margin-bottom: 8px;
+    ">
+        <p style="color:#c9a84c; font-size:0.82rem; letter-spacing:3px; text-transform:uppercase;
+                  font-style:italic; margin-bottom:18px;">
+            India's Most Inclusive Matrimony Platform
+        </p>
+        <h1 style="font-family:'Playfair Display',serif; font-size:4.2rem; font-weight:700;
+                   color:white; line-height:1.15; margin-bottom:20px; letter-spacing:-1px;">
+            Every Heart Deserves<br>to be
+            <span style="color:#c9a84c; font-style:italic;">Found.</span>
         </h1>
-
-        <p class="hero-tagline-new">
+        <p style="font-size:1.08rem; color:rgba(255,255,255,0.65); max-width:520px;
+                  margin:0 auto 40px; line-height:1.75; font-weight:300;">
             We built ShaadiZone because love doesn't ask if you can walk, see, or hear.
             It only asks if you're ready — and you are.
         </p>
-
-        <div class="hero-cta-group" id="hero-cta-anchor"></div>
-
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="hero-stat-num">10,000+</div>
-                <div class="hero-stat-lbl">Members</div>
+        <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;
+                    border-top:1px solid rgba(255,255,255,0.1); padding-top:32px; margin-top:8px;">
+            <div style="text-align:center;">
+                <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#c9a84c;">10,000+</div>
+                <div style="font-size:0.72rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:1.5px; margin-top:3px;">Members</div>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">500+</div>
-                <div class="hero-stat-lbl">Unions</div>
+            <div style="text-align:center;">
+                <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#c9a84c;">500+</div>
+                <div style="font-size:0.72rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:1.5px; margin-top:3px;">Unions</div>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">200+</div>
-                <div class="hero-stat-lbl">Weddings</div>
+            <div style="text-align:center;">
+                <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#c9a84c;">200+</div>
+                <div style="font-size:0.72rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:1.5px; margin-top:3px;">Weddings</div>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">100%</div>
-                <div class="hero-stat-lbl">Free to Join</div>
+            <div style="text-align:center;">
+                <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#c9a84c;">100%</div>
+                <div style="font-size:0.72rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:1.5px; margin-top:3px;">Free to Join</div>
             </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    # CTA buttons inside dark strip to avoid white Streamlit container gap
-    st.markdown("""
-    <div style="background:linear-gradient(180deg,#3d0020 0%,#2d0018 100%);
-                padding:36px 0 8px; margin-top:-4px; text-align:center;">
-        <p style="color:rgba(255,255,255,0.4); font-size:0.75rem; letter-spacing:2.5px;
-                  text-transform:uppercase; margin-bottom:20px;">
-            Start your journey today — it's free
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
     cta_c1, cta_c2, cta_c3, cta_c4, cta_c5 = st.columns([2, 1, 0.3, 1, 2])
     with cta_c2:
         if st.button("✦ Begin Your Journey", type="primary", use_container_width=True, key="hero_join"):
@@ -1269,11 +1257,6 @@ def show_home():
     with cta_c4:
         if st.button("Browse Members", use_container_width=True, key="hero_browse"):
             nav_to("profiles")
-    st.markdown("""
-    <div style="background:linear-gradient(180deg,#2d0018 0%,#1a0010 100%);
-                padding:8px 0 0; margin-top:-8px;">
-    </div>
-    """, unsafe_allow_html=True)
 
     # ── BELIEF STRIP ─────────────────────────────────────────────────────────
     st.markdown("""
