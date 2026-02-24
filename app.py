@@ -1362,15 +1362,15 @@ def show_home():
     for i, (num, icon, title, desc) in enumerate(steps):
         with sc[i]:
             st.markdown(f"""
-            <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
-                        border-radius:20px; padding:32px 20px; text-align:center;
-                        margin-top:-32px;">
-                <div style="font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:700;
-                            color:rgba(201,168,76,0.25); line-height:1; margin-bottom:4px;">{num}</div>
-                <div style="font-size:2rem; margin-bottom:14px;">{icon}</div>
-                <p style="font-family:'Playfair Display',serif; color:white; font-size:1.1rem;
-                          margin-bottom:10px; font-weight:600;">{title}</p>
-                <p style="color:rgba(255,255,255,0.55); font-size:0.86rem; line-height:1.7; margin:0;">{desc}</p>
+            <div style="background:linear-gradient(160deg,#1a0010 0%,#3d0020 100%);
+                        border:1px solid rgba(201,168,76,0.25);
+                        border-radius:20px; padding:36px 24px; text-align:center;">
+                <div style="font-family:'Playfair Display',serif; font-size:3.8rem; font-weight:700;
+                            color:rgba(201,168,76,0.35); line-height:1; margin-bottom:6px;">{num}</div>
+                <div style="font-size:2.2rem; margin-bottom:16px;">{icon}</div>
+                <p style="font-family:'Playfair Display',serif; color:#ffffff; font-size:1.1rem;
+                          font-weight:600; margin-bottom:10px;">{title}</p>
+                <p style="color:rgba(255,255,255,0.7); font-size:0.87rem; line-height:1.75; margin:0;">{desc}</p>
             </div>
             """, unsafe_allow_html=True)
 
