@@ -1133,6 +1133,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ─── HELPERS ────────────────────────────────────────────────────────────────
+def get_avatar_url(name: str, style: str = "lorelei") -> str:
+    """DiceBear illustrated avatar — unique per name, hosted CDN, no key needed."""
+    import urllib.parse
+    seed = urllib.parse.quote(name.replace(" ", ""))
+    return (f"https://api.dicebear.com/9.x/{style}/svg"
+            f"?seed={seed}&backgroundColor=fce4ec,f8bbd0,e91e63&backgroundType=solid"
+            f"&radius=50")
+
 # ─── DATA ───────────────────────────────────────────────────────────────────
 if 'profiles' not in st.session_state:
     _names = ["Ananya Sharma","Raj Verma","Diya Patel","Aditya Singh","Myra Nair","Karan Menon"]
@@ -1157,14 +1166,6 @@ religions       = ['Hindu', 'Muslim', 'Christian', 'Sikh', 'Buddhist', 'Jain', '
 professions     = ['Software Engineer', 'Doctor', 'Business Owner', 'Fashion Designer', 'Engineer', 'Architect', 'Lawyer', 'Banker', 'Artist', 'Writer', 'Other']
 disability_types= ['Physical Disability (Wheelchair)', 'Physical Disability (Amputee)', 'Physical Disability (Cerebral Palsy)', 'Visually Impaired', 'Deaf', 'Hearing Impaired', 'Deaf & Mute', 'Speech Impairment', 'Other']
 income_ranges   = ['Below 5 LPA', '5-10 LPA', '10-15 LPA', '15-20 LPA', '20-30 LPA', '30+ LPA', 'Prefer not to say']
-
-def get_avatar_url(name: str, style: str = "lorelei") -> str:
-    """DiceBear illustrated avatar — unique per name, hosted CDN, no key needed."""
-    import urllib.parse
-    seed = urllib.parse.quote(name.replace(" ", ""))
-    return (f"https://api.dicebear.com/9.x/{style}/svg"
-            f"?seed={seed}&backgroundColor=fce4ec,f8bbd0,e91e63&backgroundType=solid"
-            f"&radius=50")
 
 def nav_to(page):
     st.session_state.page = page
