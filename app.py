@@ -307,6 +307,51 @@ st.markdown("""
         display: inline-block;
     }
 
+    /* ─── PHOTOS ─── */
+    .profile-photo {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(255,255,255,0.55);
+        box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+        display: block;
+        margin: 0 auto;
+        background: linear-gradient(135deg,#e91e63,#c2185b);
+    }
+
+    .detail-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 22px;
+        object-fit: cover;
+        border: 3px solid rgba(255,255,255,0.35);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+        background: linear-gradient(135deg,#e91e63,#c2185b);
+    }
+
+    .match-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        object-fit: cover;
+        border: 2px solid rgba(233,30,99,0.2);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        background: linear-gradient(135deg,#e91e63,#c2185b);
+    }
+
+    /* upload preview */
+    .photo-preview {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f8bbd0;
+        box-shadow: 0 4px 16px rgba(233,30,99,0.15);
+        display: block;
+        margin: 0 auto 12px;
+    }
+
     /* ─── DETAIL PAGE ─── */
     .detail-header {
         background: linear-gradient(135deg, #e91e63, #c2185b);
@@ -1090,13 +1135,14 @@ st.markdown("""
 
 # ─── DATA ───────────────────────────────────────────────────────────────────
 if 'profiles' not in st.session_state:
+    _names = ["Ananya Sharma","Raj Verma","Diya Patel","Aditya Singh","Myra Nair","Karan Menon"]
     st.session_state.profiles = [
-        {"id": 1, "name": "Ananya Sharma",  "age": 26, "profession": "Software Engineer", "location": "Mumbai",    "education": "B.Tech",    "religion": "Hindu", "image": "👩‍💻", "verified": True,  "about": "I use a wheelchair but that doesn't stop me from dreaming big!",          "disability": "Wheelchair User",  "disability_type": "Physical", "income": "8-10 LPA"},
-        {"id": 2, "name": "Raj Verma",       "age": 28, "profession": "Doctor",            "location": "Delhi",     "education": "MBBS",      "religion": "Hindu", "image": "👨‍⚕️", "verified": True,  "about": "Born blind but I see the world with my heart.",                           "disability": "Visually Impaired","disability_type": "Visual",    "income": "15-20 LPA"},
-        {"id": 3, "name": "Diya Patel",      "age": 24, "profession": "Teacher",           "location": "Ahmedabad", "education": "M.A. B.Ed", "religion": "Hindu", "image": "👩‍🏫", "verified": True,  "about": "I can't hear but I can feel love!",                                       "disability": "Deaf & Mute",      "disability_type": "Hearing",   "income": "5-6 LPA"},
-        {"id": 4, "name": "Aditya Singh",    "age": 30, "profession": "Business Owner",    "location": "Jaipur",    "education": "MBA",       "religion": "Hindu", "image": "👨‍💼", "verified": True,  "about": "Lost my leg but gained perspective!",                                     "disability": "Amputee",          "disability_type": "Physical",  "income": "25-30 LPA"},
-        {"id": 5, "name": "Myra Nair",       "age": 27, "profession": "Fashion Designer",  "location": "Bangalore", "education": "B.Des",     "religion": "Hindu", "image": "👩‍🎨", "verified": True,  "about": "Creating beautiful designs and seeking love!",                            "disability": "Hearing Impaired", "disability_type": "Hearing",   "income": "6-8 LPA"},
-        {"id": 6, "name": "Karan Menon",     "age": 29, "profession": "Engineer",          "location": "Kochi",     "education": "B.Tech",    "religion": "Hindu", "image": "👨‍💻", "verified": True,  "about": "Born with cerebral palsy but I'm an engineer!",                          "disability": "Cerebral Palsy",   "disability_type": "Physical",  "income": "12-15 LPA"},
+        {"id": 1, "name": "Ananya Sharma",  "age": 26, "profession": "Software Engineer", "location": "Mumbai",    "education": "B.Tech",    "religion": "Hindu", "image": "👩‍💻", "verified": True,  "about": "I use a wheelchair but that doesn't stop me from dreaming big!",          "disability": "Wheelchair User",  "disability_type": "Physical", "income": "8-10 LPA",  "photo": get_avatar_url("Ananya Sharma")},
+        {"id": 2, "name": "Raj Verma",      "age": 28, "profession": "Doctor",            "location": "Delhi",     "education": "MBBS",      "religion": "Hindu", "image": "👨‍⚕️", "verified": True,  "about": "Born blind but I see the world with my heart.",                           "disability": "Visually Impaired","disability_type": "Visual",    "income": "15-20 LPA", "photo": get_avatar_url("Raj Verma")},
+        {"id": 3, "name": "Diya Patel",     "age": 24, "profession": "Teacher",           "location": "Ahmedabad", "education": "M.A. B.Ed", "religion": "Hindu", "image": "👩‍🏫", "verified": True,  "about": "I can't hear but I can feel love!",                                       "disability": "Deaf & Mute",      "disability_type": "Hearing",   "income": "5-6 LPA",   "photo": get_avatar_url("Diya Patel")},
+        {"id": 4, "name": "Aditya Singh",   "age": 30, "profession": "Business Owner",    "location": "Jaipur",    "education": "MBA",       "religion": "Hindu", "image": "👨‍💼", "verified": True,  "about": "Lost my leg but gained perspective!",                                     "disability": "Amputee",          "disability_type": "Physical",  "income": "25-30 LPA", "photo": get_avatar_url("Aditya Singh")},
+        {"id": 5, "name": "Myra Nair",      "age": 27, "profession": "Fashion Designer",  "location": "Bangalore", "education": "B.Des",     "religion": "Hindu", "image": "👩‍🎨", "verified": True,  "about": "Creating beautiful designs and seeking love!",                            "disability": "Hearing Impaired", "disability_type": "Hearing",   "income": "6-8 LPA",   "photo": get_avatar_url("Myra Nair")},
+        {"id": 6, "name": "Karan Menon",    "age": 29, "profession": "Engineer",          "location": "Kochi",     "education": "B.Tech",    "religion": "Hindu", "image": "👨‍💻", "verified": True,  "about": "Born with cerebral palsy but I'm an engineer!",                          "disability": "Cerebral Palsy",   "disability_type": "Physical",  "income": "12-15 LPA", "photo": get_avatar_url("Karan Menon")},
     ]
 
 if 'page' not in st.session_state:
@@ -1111,6 +1157,14 @@ religions       = ['Hindu', 'Muslim', 'Christian', 'Sikh', 'Buddhist', 'Jain', '
 professions     = ['Software Engineer', 'Doctor', 'Business Owner', 'Fashion Designer', 'Engineer', 'Architect', 'Lawyer', 'Banker', 'Artist', 'Writer', 'Other']
 disability_types= ['Physical Disability (Wheelchair)', 'Physical Disability (Amputee)', 'Physical Disability (Cerebral Palsy)', 'Visually Impaired', 'Deaf', 'Hearing Impaired', 'Deaf & Mute', 'Speech Impairment', 'Other']
 income_ranges   = ['Below 5 LPA', '5-10 LPA', '10-15 LPA', '15-20 LPA', '20-30 LPA', '30+ LPA', 'Prefer not to say']
+
+def get_avatar_url(name: str, style: str = "lorelei") -> str:
+    """DiceBear illustrated avatar — unique per name, hosted CDN, no key needed."""
+    import urllib.parse
+    seed = urllib.parse.quote(name.replace(" ", ""))
+    return (f"https://api.dicebear.com/9.x/{style}/svg"
+            f"?seed={seed}&backgroundColor=fce4ec,f8bbd0,e91e63&backgroundType=solid"
+            f"&radius=50")
 
 def nav_to(page):
     st.session_state.page = page
@@ -1174,14 +1228,7 @@ def show_home():
             It only asks if you're ready — and you are.
         </p>
 
-        <div class="hero-cta-group">
-            <span style="cursor:pointer;" id="cta-join">
-                <span class="btn-gold">✦ Begin Your Journey</span>
-            </span>
-            <span style="cursor:pointer;" id="cta-browse">
-                <span class="btn-ghost">Browse Members</span>
-            </span>
-        </div>
+        <div class="hero-cta-group" id="hero-cta-anchor"></div>
 
         <div class="hero-stats">
             <div class="hero-stat">
@@ -1204,14 +1251,28 @@ def show_home():
     </div>
     """, unsafe_allow_html=True)
 
-    # Hidden Streamlit buttons behind the HTML CTAs
-    cta1, cta2, cta3 = st.columns([3, 1, 3])
-    with cta1:
+    # CTA buttons inside dark strip to avoid white Streamlit container gap
+    st.markdown("""
+    <div style="background:linear-gradient(180deg,#3d0020 0%,#2d0018 100%);
+                padding:36px 0 8px; margin-top:-4px; text-align:center;">
+        <p style="color:rgba(255,255,255,0.4); font-size:0.75rem; letter-spacing:2.5px;
+                  text-transform:uppercase; margin-bottom:20px;">
+            Start your journey today — it's free
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    cta_c1, cta_c2, cta_c3, cta_c4, cta_c5 = st.columns([2, 1, 0.3, 1, 2])
+    with cta_c2:
         if st.button("✦ Begin Your Journey", type="primary", use_container_width=True, key="hero_join"):
             nav_to("create")
-    with cta3:
+    with cta_c4:
         if st.button("Browse Members", use_container_width=True, key="hero_browse"):
             nav_to("profiles")
+    st.markdown("""
+    <div style="background:linear-gradient(180deg,#2d0018 0%,#1a0010 100%);
+                padding:8px 0 0; margin-top:-8px;">
+    </div>
+    """, unsafe_allow_html=True)
 
     # ── BELIEF STRIP ─────────────────────────────────────────────────────────
     st.markdown("""
@@ -1403,11 +1464,12 @@ def show_profiles():
     for i, profile in enumerate(profiles):
         with cols[i % 3]:
             verified_html = '<span class="verified-pill">✓ Verified</span>' if profile['verified'] else ''
+            photo = profile.get('photo', get_avatar_url(profile['name']))
             st.markdown(f"""
             <div class="profile-card">
-                <div class="profile-image-area">
+                <div class="profile-image-area" style="padding:28px 28px 22px;">
                     {verified_html}
-                    <span class="avatar">{profile['image']}</span>
+                    <img src="{photo}" class="profile-photo" alt="{profile['name']}" />
                 </div>
                 <div class="profile-body">
                     <div class="profile-name">{profile['name']}</div>
@@ -1431,11 +1493,12 @@ def show_profile_detail():
         st.session_state.page = "profiles"
         st.rerun()
 
+    photo = profile.get('photo', get_avatar_url(profile['name']))
     st.markdown(f"""
     <div class="detail-header">
         <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;">
-            <div style="background:rgba(255,255,255,0.2); padding:24px; border-radius:22px; font-size:5rem; line-height:1; backdrop-filter:blur(8px);">
-                {profile['image']}
+            <div>
+                <img src="{photo}" class="detail-photo" alt="{profile['name']}" />
             </div>
             <div>
                 <h1 style="color:white; font-family:'Playfair Display',serif; font-size:2.5rem; margin-bottom:6px;">{profile['name']}</h1>
@@ -1508,6 +1571,25 @@ def show_create_profile():
     with st.form("create_profile"):
         st.markdown('<div class="form-container">', unsafe_allow_html=True)
 
+        st.markdown("#### 📸 Profile Photo")
+        photo_col1, photo_col2 = st.columns([1, 2])
+        with photo_col1:
+            uploaded_photo = st.file_uploader(
+                "Upload your photo",
+                type=["jpg", "jpeg", "png", "webp"],
+                help="Square photos work best. Max 5 MB.",
+                label_visibility="collapsed",
+            )
+        with photo_col2:
+            st.markdown("""
+            <div style="color:#999; font-size:0.85rem; line-height:1.7; padding-top:8px;">
+                Upload a clear, recent photo of yourself.<br>
+                JPG, PNG or WebP · Recommended: square crop.<br>
+                <span style="color:#f8bbd0;">If you skip this, a beautiful illustrated avatar will be generated for you.</span>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("#### 👤 Basic Information")
         col1, col2 = st.columns(2)
         with col1:
@@ -1519,7 +1601,7 @@ def show_create_profile():
             education  = st.text_input("Education *",   placeholder="e.g. B.Tech, MBA…")
             religion   = st.selectbox("Religion *",     religions)
             income     = st.selectbox("Income Range",   ["Prefer not to say"] + income_ranges)
-            image      = st.selectbox("Profile Avatar", profile_images)
+            image      = "💖"  # kept for legacy compatibility
 
         st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("#### ♿ Disability Information")
@@ -1549,6 +1631,13 @@ def show_create_profile():
 
         if submit:
             if name and age and profession != "Select" and location != "Select" and education and about and disability_type != "Select":
+                import base64
+                if uploaded_photo:
+                    raw = uploaded_photo.read()
+                    b64 = base64.b64encode(raw).decode()
+                    photo_url = f"data:{uploaded_photo.type};base64,{b64}"
+                else:
+                    photo_url = get_avatar_url(name)
                 new_profile = {
                     "id": len(st.session_state.profiles) + 1,
                     "name": name, "age": age, "profession": profession,
@@ -1556,6 +1645,7 @@ def show_create_profile():
                     "image": image, "verified": False, "about": about,
                     "disability": disability_detail if disability_detail else disability_type,
                     "disability_type": disability_type, "income": income,
+                    "photo": photo_url,
                 }
                 st.session_state.profiles.insert(0, new_profile)
                 st.success("💖 Profile created successfully! We'll verify it within 24 hours.")
@@ -1720,10 +1810,13 @@ def show_matches():
 
         verified_badge = '<span style="background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:700;">✓ Verified</span>' if profile['verified'] else ''
 
+        m_photo = profile.get('photo', get_avatar_url(profile['name']))
         st.markdown(f"""
         <div class="match-card">
             <div class="match-rank">#{rank}</div>
-            <div class="match-avatar">{profile['image']}</div>
+            <div class="match-avatar" style="background:none; border-radius:16px; overflow:hidden; padding:0;">
+                <img src="{m_photo}" class="match-photo" alt="{profile['name']}" />
+            </div>
             <div class="match-info">
                 <div class="match-name">{profile['name']}
                     &nbsp;{verified_badge}
