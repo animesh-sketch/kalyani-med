@@ -4,3 +4,15 @@ dist
 *.pyc
 __pycache__
 .DS_Store
+*.zip
+mnt/
+pages/
+utils/
+assets/
+data/
+package*.json
+*.jsx
+*.js
+*.css
+html/
+*.md
