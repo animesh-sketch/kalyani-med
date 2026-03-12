@@ -34,7 +34,7 @@ translations = {
         "attach_doc": "Attach Document",
         "this_month": "This Month", "overview": "Overview", "all_well": "All medicines well stocked!",
         "contact": "Contact Us",         "years_trust": "30 Years Trust with Empathy and Care", "by": "By Apurba Koner (Nupur)",
-        "location": "Putsuri, Burdwan, WB", "tagline": "Empathy n Care"
+        "location": "Putsuri, Burdwan, WB", "tagline": ""
     },
     "bn": {
         "dashboard": "ড্যাশবোর্ড", "sales": "বিক্রয়", "inventory": "মজুদ",
@@ -305,17 +305,21 @@ def init_db():
 
 init_db()
 
+if 'ui_design' not in st.session_state:
+    st.session_state.ui_design = "medical_blue"
+design = st.session_state.ui_design
+
 # ============================================================
 # UI DESIGN SELECTOR (Sidebar)
 # ============================================================
 
 with st.sidebar:
     st.markdown("---")
-    design = st.selectbox("🎨 Choose Theme", 
-        ["Medical Blue", "Nature Green", "Royal Purple", "Elegant Gold"],
-        index=0,
-        key="design_selector"
-    )
+    all_themes = ["Medical Blue", "Nature Green", "Royal Purple", "Elegant Gold", "Ruby Red", "Ocean Teal", "Sunset Orange", "Dark Mode"]
+    default_idx = all_themes.index(design.title()) if design.title() in all_themes else 0
+    tab1, tab2 = st.tabs(["📖 Menu", "🎨 Theme"])
+    with tab2:
+        design = st.selectbox("Choose Theme", all_themes, index=default_idx, key="design_selector")
     st.session_state.ui_design = design.lower().replace(" ", "_")
 
 design = st.session_state.ui_design
@@ -345,6 +349,26 @@ theme_configs = {
         "primary": "#b45309", "light": "#d97706", "dark": "#92400e",
         "bg": "#fffbeb", "gradient": "linear-gradient(135deg, #b45309 0%, #d97706 100%)",
         "sidebar": "linear-gradient(180deg, #92400e 0%, #b45309 50%, #d97706 100%)"
+    },
+    "ruby_red": {
+        "primary": "#dc2626", "light": "#ef4444", "dark": "#b91c1c",
+        "bg": "#fef2f2", "gradient": "linear-gradient(135deg, #dc2626 0%, #ef4444 100%)",
+        "sidebar": "linear-gradient(180deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%)"
+    },
+    "ocean_teal": {
+        "primary": "#0891b2", "light": "#06b6d4", "dark": "#0e7490",
+        "bg": "#ecfeff", "gradient": "linear-gradient(135deg, #0891b2 0%, #06b6d4 100%)",
+        "sidebar": "linear-gradient(180deg, #0e7490 0%, #0891b2 50%, #06b6d4 100%)"
+    },
+    "sunset_orange": {
+        "primary": "#ea580c", "light": "#f97316", "dark": "#c2410c",
+        "bg": "#fff7ed", "gradient": "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
+        "sidebar": "linear-gradient(180deg, #c2410c 0%, #ea580c 50%, #f97316 100%)"
+    },
+    "dark_mode": {
+        "primary": "#6366f1", "light": "#818cf8", "dark": "#4f46e5",
+        "bg": "#0f172a", "gradient": "linear-gradient(135deg, #6366f1 0%, #818cf8 100%)",
+        "sidebar": "linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #4f46e5 100%)"
     }
 }
 
