@@ -446,6 +446,11 @@ def render_sidebar():
         
         st.markdown("---")
         
+        # Dashboard
+        if st.button(f"  🏠  Dashboard", use_container_width=True, key="nav_dashboard"):
+            st.session_state.current_page = "dashboard"
+            st.rerun()
+        
         # Store Management - Merged
         if st.button(f"  📦  Inventory & Purchase", use_container_width=True, key="nav_inventory"):
             st.session_state.current_page = "inventory"
@@ -454,7 +459,7 @@ def render_sidebar():
         st.markdown("---")
         
         # People
-        for icon, label, key in [("🚚", t['suppliers'], "suppliers"), ("👥", t['staff'], "staff"), ("🧑‍🤝‍🧑", t['customers'], "customers"), ("👨‍⚕️", t['doctors'], "doctors")]:
+        for icon, label, key in [("👥", t['staff'], "staff"), ("🧑‍🤝‍🧑", t['customers'], "customers"), ("👨‍⚕️", t['doctors'], "doctors")]:
             if st.button(f"  {icon}  {label}", use_container_width=True, key=f"nav_{key}"):
                 st.session_state.current_page = key
                 st.rerun()
