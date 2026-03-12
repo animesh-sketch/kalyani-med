@@ -446,11 +446,10 @@ def render_sidebar():
         
         st.markdown("---")
         
-        # Store
-        for icon, label, key in [("📊", t['dashboard'], "dashboard"), ("💰", t['sales'], "sales"), ("📦", t['inventory'], "inventory"), ("🛒", t['purchases'], "purchases")]:
-            if st.button(f"  {icon}  {label}", use_container_width=True, key=f"nav_{key}"):
-                st.session_state.current_page = key
-                st.rerun()
+        # Store Management - Merged
+        if st.button(f"  📦  Inventory & Purchase", use_container_width=True, key="nav_inventory"):
+            st.session_state.current_page = "inventory"
+            st.rerun()
         
         st.markdown("---")
         
@@ -532,11 +531,36 @@ def page_dashboard():
     
     st.markdown("---")
     
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3, c4, c5 = st.columns(5)
     c1.info(f"📦 **{len(st.session_state.inventory)}** {t['medicines']}")
     c2.success(f"🧑‍🤝‍🧑 **{len(st.session_state.customers)}** {t['customers']}")
     c3.warning(f"👥 **{len(st.session_state.staff)}** {t['staff']}")
     c4.info(f"🚚 **{len(st.session_state.distributors)}** {t['suppliers']}")
+    total_supplier_due = sum(d.get('balance', 0) for d in st.session_state.distributors)
+    c5.error(f"💰 Due: ₹{total_supplier_due:,}")
+    
+    st.markdown("---")
+    
+    # Quick Suppliers Summary
+    st.markdown("### 🚚 Suppliers / Distributors - Quick View")
+    
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        for sup in st.session_state.distributors[:3]:
+            with st.expander(f"🏢 {sup['name']} - 💰 ₹{sup.get('balance', 0):,}"):
+                st.write(f"📞 {sup.get('contact', 'N/A')}")
+                st.write(f"📍 {sup.get('address', 'N/A')}")
+                if sup.get('balance', 0) > 0:
+                    st.warning(f"⚠️ Pending: ₹{sup['balance']:,}")
+                else:
+                    st.success("✅ All cleared")
+    
+    with col2:
+        st.markdown("#### 📊 Supplier Summary")
+        total_due = sum(d.get('balance', 0) for d in st.session_state.distributors)
+        st.metric("Total Due", f"₹{total_due:,}", delta_color="inverse")
+        st.metric("Active Suppliers", len(st.session_state.distributors))
 
 def page_sales():
     t = translations[st.session_state.lang]
@@ -680,9 +704,9 @@ def page_sales():
 
 def page_inventory():
     t = translations[st.session_state.lang]
-    st.markdown(f'<h1 class="gradient-text" style="font-size:1.8rem;">📦 {t["inventory"]}</h1>', unsafe_allow_html=True)
+    st.markdown(f'<h1 class="gradient-text" style="font-size:1.8rem;">📦 Inventory, Purchase & Suppliers</h1>', unsafe_allow_html=True)
     
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["💊 Medicines", "⚠️ Low Stock", "📅 Expiry Alerts", "🏷️ Barcode/HSN", "📊 Categories"])
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💊 Medicines", "⚠️ Low Stock", "📅 Expiry", "🛒 Purchase Orders", "🚚 Suppliers", "📊 Summary"])
     
     with tab1:
         with st.expander(f"➕ {t['add_medicine']}", expanded=True):
@@ -849,140 +873,85 @@ def page_inventory():
         
         for cat, count in sorted(categories.items(), key=lambda x: x[1], reverse=True):
             st.write(f"**{cat}:** {count} medicines")
-
-def page_purchases():
-    t = translations[st.session_state.lang]
-    st.markdown(f'<h1 class="gradient-text" style="font-size:1.8rem;">🛒 {t["purchases"]}</h1>', unsafe_allow_html=True)
     
-    tab1, tab2, tab3, tab4 = st.tabs(["📝 Purchase Orders", "📦 GRN (Goods Received)", "📄 Purchase Bills", "🔄 Purchase Returns"])
-    
-    with tab1:
-        with st.expander(f"➕ {t['create_order']}", expanded=True):
-            with st.form("po_form"):
+    with tab4:
+        st.markdown("### 🛒 Purchase Orders")
+        
+        with st.expander("➕ Create New Order", expanded=True):
+            with st.form("po_form_merge"):
                 c1, c2 = st.columns(2)
                 with c1:
-                    supplier = st.selectbox(t['suppliers'], [d['name'] for d in st.session_state.distributors])
-                    order_date = st.date_input("Order Date", datetime.now().date())
+                    po_supplier = st.selectbox("Supplier", [d['name'] for d in st.session_state.distributors])
+                    po_date = st.date_input("Order Date", datetime.now().date())
                 with c2:
-                    expected_date = st.date_input("Expected Delivery")
-                    status = st.selectbox(t['status'], [t['pending'], t['ordered'], t['received']])
+                    po_expected = st.date_input("Expected Delivery")
+                    po_status = st.selectbox("Status", ["Pending", "Ordered", "Received"])
                 
-                items = st.text_area("Items (Medicine Name - Qty - Rate per unit)")
-                notes = st.text_area("Notes")
+                po_items = st.text_area("Items (Medicine - Qty - Cost)")
+                po_notes = st.text_area("Notes")
                 
-                if st.form_submit_button(f"💾 {t['create_order']}"):
+                if st.form_submit_button("💾 Create Order"):
                     st.session_state.purchase_orders.append({
                         "id": len(st.session_state.purchase_orders) + 1,
-                        "supplier": supplier, "date": str(order_date),
-                        "expected": str(expected_date), "status": status,
-                        "items": items, "notes": notes
+                        "supplier": po_supplier, "date": str(po_date),
+                        "expected": str(po_expected), "status": po_status,
+                        "items": po_items, "notes": po_notes
                     })
-                    st.success("✅ Purchase Order created!")
+                    st.success("✅ Purchase order created!")
         
-        st.markdown("### 📋 Active Purchase Orders")
+        st.markdown("#### 📋 Active Orders")
         for po in st.session_state.purchase_orders:
-            status_color = "🟡" if po['status'] == "Pending" else "🔵" if po['status'] == "Ordered" else "🟢"
-            with st.expander(f"{status_color} PO #{po['id']} - {po['supplier']} - {po['date']}"):
+            status_icon = "🟡" if po['status'] == "Pending" else "🔵" if po['status'] == "Ordered" else "🟢"
+            with st.expander(f"{status_icon} PO #{po['id']} - {po['supplier']} - {po['date']}"):
                 st.write(f"**Status:** {po['status']}")
                 st.write(f"**Expected:** {po['expected']}")
                 st.write(f"**Items:** {po['items']}")
                 if po['status'] != "Received":
-                    if st.button(f"📦 Mark as Received", key=f"rec_{po['id']}"):
+                    if st.button(f"Mark Received", key=f"rec_{po['id']}"):
                         po['status'] = "Received"
-                        st.success("Marked as received!")
                         st.rerun()
     
-    with tab2:
-        st.markdown("### 📦 Goods Received Note (GRN)")
-        with st.expander("➕ Create GRN", expanded=True):
-            with st.form("grn_form"):
+    with tab6:
+        st.markdown("### 🚚 Suppliers / Distributors")
+        
+        with st.expander("➕ Add Supplier", expanded=True):
+            with st.form("supplier_form_merge"):
                 c1, c2 = st.columns(2)
                 with c1:
-                    grn_supplier = st.selectbox("Select PO/Supplier", [d['name'] for d in st.session_state.distributors])
-                    grn_date = st.date_input("GRN Date", datetime.now().date())
+                    sup_name = st.text_input("Supplier Name")
+                    sup_contact = st.text_input("Phone")
                 with c2:
-                    invoice_no = st.text_input("Invoice/Bill Number")
-                    grn_total = st.number_input("Total Amount (₹)", min_value=0)
+                    sup_address = st.text_input("Address")
+                    sup_balance = st.number_input("Pending Balance (₹)", min_value=0)
                 
-                received_items = st.text_area("Received Items (Medicine - Qty - Batch No - Expiry)")
-                condition = st.selectbox("Condition", ["Good", "Damaged", "Partial"])
+                sup_doc = st.file_uploader("📎 Attach Document")
                 
-                if st.form_submit_button(f"💾 Save GRN"):
-                    st.success("✅ GRN created!")
+                if st.form_submit_button("➕ Add Supplier"):
+                    st.session_state.distributors.append({
+                        "id": len(st.session_state.distributors) + 1,
+                        "name": sup_name, "contact": sup_contact,
+                        "address": sup_address, "balance": sup_balance
+                    })
+                    st.success("✅ Supplier added!")
         
-        st.markdown("### 📋 GRN History")
-        st.info("📭 No GRN records yet")
-    
-    with tab3:
-        st.markdown("### 📄 Supplier Bills / Invoices")
+        total_balance = sum(d['balance'] for d in st.session_state.distributors)
+        st.metric("Total Pending Payments", f"₹{total_balance:,}")
         
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            bill_supplier = st.selectbox("Filter by Supplier", ["All"] + [d['name'] for d in st.session_state.distributors])
-        with c2:
-            bill_status = st.selectbox("Filter by Status", ["All", "Paid", "Pending"])
-        with c3:
-            bill_month = st.date_input("Month", datetime.now().date(), format="YYYY-MM")
-        
-        total_pending = sum(d['balance'] for d in st.session_state.distributors)
-        st.metric("💰 Total Pending Payments", f"₹{total_pending:,}")
-        
+        st.markdown("#### 📋 Supplier List")
         for sup in st.session_state.distributors:
-            if bill_supplier == "All" or bill_supplier == sup['name']:
-                with st.expander(f"🏢 {sup['name']} - ₹{sup['balance']:,} pending"):
-                    st.write(f"📞 {sup['contact']}")
-                    st.write(f"📍 {sup['address']}")
-                    col1, col2 = st.columns(2)
-                    with col1:
-                        if st.button(f"💸 Pay Now", key=f"pay_{sup['id']}"):
-                            sup['balance'] = 0
-                            st.success("Payment recorded!")
-                            st.rerun()
-                    with col2:
-                        if st.button(f"➕ Add Payment", key=f"addpay_{sup['id']}"):
-                            st.info("Payment dialog would open")
-    
-    with tab4:
-        st.markdown("### 🔄 Purchase Returns")
-        with st.expander("➕ Create Purchase Return", expanded=True):
-            with st.form("return_form"):
+            with st.expander(f"🏢 **{sup['name']}** | 📞 {sup['contact']}"):
                 c1, c2 = st.columns(2)
-                with c1:
-                    return_supplier = st.selectbox("Supplier", [d['name'] for d in st.session_state.distributors])
-                    return_reason = st.selectbox("Reason", ["Expired", "Damaged", "Wrong Item", "Excess Supply"])
-                with c2:
-                    return_amount = st.number_input("Return Amount (₹)", min_value=0)
-                    return_date = st.date_input("Return Date", datetime.now().date())
+                c1.write(f"📍 {sup['address']}")
+                c2.write(f"💰 Balance: ₹{sup['balance']:,}")
                 
-                return_items = st.text_area("Items to Return")
-                
-                if st.form_submit_button(f"💾 Create Return"):
-                    st.success("✅ Purchase return created!")
-        
-        st.markdown("### 📋 Return History")
-        st.info("📭 No purchase returns yet")
+                col1, col2 = st.columns(2)
+                if col1.button(f"💸 Pay", key=f"pay_sup_{sup['id']}"):
+                    sup['balance'] = 0
+                    st.rerun()
+                if col2.button(f"🗑️ Delete", key=f"del_sup_{sup['id']}"):
+                    st.session_state.distributors.remove(sup)
+                    st.rerun()
 
-def page_suppliers():
-    t = translations[st.session_state.lang]
-    st.markdown(f'<h1 class="gradient-text" style="font-size:1.8rem;">🚚 {t["suppliers"]}</h1>', unsafe_allow_html=True)
-    
-    with st.expander(f"➕ {t['add_supplier']}"):
-        with st.form("sup_form"):
-            name = st.text_input(t['name'])
-            contact = st.text_input(t['phone'])
-            address = st.text_input(t['address'])
-            uploaded_file = st.file_uploader("📎 Attach Document (Invoice/Bill)", type=['pdf', 'jpg', 'png', 'jpeg'])
-            
-            if st.form_submit_button(f"➕ {t['add']}"):
-                if uploaded_file:
-                    st.success(f"Added {name} with attachment!")
-                else:
-                    st.success("Added!")
-    
-    for sup in st.session_state.distributors:
-        with st.expander(f"🏢 **{sup['name']}** | 📞 {sup['contact']}"):
-            st.write(f"📍 {sup['address']}")
-            st.write(f"💰 Balance: ₹{sup['balance']:,}")
 
 def page_staff():
     t = translations[st.session_state.lang]
@@ -2518,8 +2487,6 @@ def main():
         "dashboard": page_dashboard,
         "sales": page_sales,
         "inventory": page_inventory,
-        "purchases": page_purchases,
-        "suppliers": page_suppliers,
         "staff": page_staff,
         "customers": page_customers,
         "doctors": page_doctors,
