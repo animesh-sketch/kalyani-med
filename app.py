@@ -474,7 +474,12 @@ def render_sidebar():
         if st.button(f"  🏠  Dashboard", use_container_width=True, key="nav_dashboard"):
             st.session_state.current_page = "dashboard"
             st.rerun()
-        
+
+        # Sales
+        if st.button(f"  🛒  {t['sales']}", use_container_width=True, key="nav_sales"):
+            st.session_state.current_page = "sales"
+            st.rerun()
+
         # Store Management - Merged
         if st.button(f"  📦  Inventory & Purchase", use_container_width=True, key="nav_inventory"):
             st.session_state.current_page = "inventory"
