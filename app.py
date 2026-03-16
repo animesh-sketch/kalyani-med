@@ -96,6 +96,47 @@ def init_db():
             {"id": 18, "name": "Augmentin 625mg", "category": "Antibiotic", "price": 320, "cost": 220, "stock": 20, "expiry": "2026-11", "min_stock": 25, "manufacturer": "GSK", "gst": 12, "batch_no": "AG001", "hsn_code": "3004", "pack_size": "1x6"},
             {"id": 19, "name": "Augmentin 625mg", "category": "Antibiotic", "price": 320, "cost": 220, "stock": 35, "expiry": "2027-08", "min_stock": 25, "manufacturer": "GSK", "gst": 12, "batch_no": "AG002", "hsn_code": "3004", "pack_size": "1x6"},
             {"id": 20, "name": "Montek LC", "category": "Allergy", "price": 95, "cost": 60, "stock": 55, "expiry": "2027-04", "min_stock": 30, "manufacturer": "Sun Pharma", "gst": 12, "batch_no": "MLC01", "hsn_code": "3004", "pack_size": "10x10"},
+            # --- Additional medicines ---
+            {"id": 21, "name": "Losartan 50mg", "category": "BP/Heart", "price": 65, "cost": 40, "stock": 90, "expiry": "2027-06", "min_stock": 30, "manufacturer": "Cipla", "gst": 12, "batch_no": "LS001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 22, "name": "Atorvastatin 10mg", "category": "Cholesterol", "price": 85, "cost": 52, "stock": 75, "expiry": "2027-08", "min_stock": 30, "manufacturer": "Pfizer", "gst": 12, "batch_no": "AT001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 23, "name": "Rosuvastatin 10mg", "category": "Cholesterol", "price": 95, "cost": 60, "stock": 60, "expiry": "2027-05", "min_stock": 25, "manufacturer": "AstraZeneca", "gst": 12, "batch_no": "RS001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 24, "name": "Telmisartan 40mg", "category": "BP/Heart", "price": 75, "cost": 45, "stock": 80, "expiry": "2027-07", "min_stock": 30, "manufacturer": "Lupin", "gst": 12, "batch_no": "TL001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 25, "name": "Metoprolol 25mg", "category": "BP/Heart", "price": 55, "cost": 33, "stock": 70, "expiry": "2027-09", "min_stock": 25, "manufacturer": "Sun Pharma", "gst": 12, "batch_no": "MP001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 26, "name": "Insulin Glargine 100IU", "category": "Diabetes", "price": 850, "cost": 620, "stock": 25, "expiry": "2026-09", "min_stock": 10, "manufacturer": "Sanofi", "gst": 12, "batch_no": "IG001", "hsn_code": "3004", "pack_size": "1 vial"},
+            {"id": 27, "name": "Glipizide 5mg", "category": "Diabetes", "price": 40, "cost": 24, "stock": 95, "expiry": "2027-04", "min_stock": 30, "manufacturer": "Pfizer", "gst": 12, "batch_no": "GP001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 28, "name": "Sitagliptin 100mg", "category": "Diabetes", "price": 220, "cost": 155, "stock": 30, "expiry": "2027-03", "min_stock": 15, "manufacturer": "MSD", "gst": 12, "batch_no": "SG001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 29, "name": "Clopidogrel 75mg", "category": "BP/Heart", "price": 90, "cost": 58, "stock": 65, "expiry": "2027-10", "min_stock": 25, "manufacturer": "Sanofi", "gst": 12, "batch_no": "CL001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 30, "name": "Digoxin 0.25mg", "category": "BP/Heart", "price": 35, "cost": 20, "stock": 50, "expiry": "2027-11", "min_stock": 20, "manufacturer": "GSK", "gst": 12, "batch_no": "DG001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 31, "name": "Rabeprazole 20mg", "category": "Gastric", "price": 75, "cost": 45, "stock": 85, "expiry": "2027-06", "min_stock": 30, "manufacturer": "Cipla", "gst": 12, "batch_no": "RB001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 32, "name": "Domperidone 10mg", "category": "Gastric", "price": 30, "cost": 18, "stock": 110, "expiry": "2027-08", "min_stock": 40, "manufacturer": "Alkem", "gst": 12, "batch_no": "DM001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 33, "name": "Ondansetron 4mg", "category": "Gastric", "price": 45, "cost": 28, "stock": 70, "expiry": "2027-07", "min_stock": 25, "manufacturer": "Sun Pharma", "gst": 12, "batch_no": "ON001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 34, "name": "Doxycycline 100mg", "category": "Antibiotic", "price": 65, "cost": 40, "stock": 55, "expiry": "2027-05", "min_stock": 20, "manufacturer": "Lupin", "gst": 12, "batch_no": "DX001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 35, "name": "Ciprofloxacin 500mg", "category": "Antibiotic", "price": 80, "cost": 50, "stock": 60, "expiry": "2027-04", "min_stock": 25, "manufacturer": "Cipla", "gst": 12, "batch_no": "CP001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 36, "name": "Cefixime 200mg", "category": "Antibiotic", "price": 145, "cost": 95, "stock": 40, "expiry": "2027-03", "min_stock": 20, "manufacturer": "Alkem", "gst": 12, "batch_no": "CF001B", "hsn_code": "3004", "pack_size": "10x6"},
+            {"id": 37, "name": "Levofloxacin 500mg", "category": "Antibiotic", "price": 110, "cost": 70, "stock": 45, "expiry": "2027-06", "min_stock": 20, "manufacturer": "Dr. Reddy's", "gst": 12, "batch_no": "LV001", "hsn_code": "3004", "pack_size": "10x5"},
+            {"id": 38, "name": "Ibuprofen 400mg", "category": "Pain/Fever", "price": 25, "cost": 14, "stock": 160, "expiry": "2027-10", "min_stock": 50, "manufacturer": "Mankind", "gst": 12, "batch_no": "IB001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 39, "name": "Diclofenac 50mg", "category": "Pain/Fever", "price": 30, "cost": 17, "stock": 140, "expiry": "2027-09", "min_stock": 50, "manufacturer": "Zydus", "gst": 12, "batch_no": "DC001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 40, "name": "Tramadol 50mg", "category": "Pain/Fever", "price": 55, "cost": 35, "stock": 30, "expiry": "2027-05", "min_stock": 15, "manufacturer": "Cadila", "gst": 12, "batch_no": "TM001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 41, "name": "Pregabalin 75mg", "category": "Neuro", "price": 130, "cost": 85, "stock": 45, "expiry": "2027-07", "min_stock": 20, "manufacturer": "Pfizer", "gst": 12, "batch_no": "PG001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 42, "name": "Gabapentin 300mg", "category": "Neuro", "price": 95, "cost": 60, "stock": 55, "expiry": "2027-08", "min_stock": 20, "manufacturer": "Sun Pharma", "gst": 12, "batch_no": "GB001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 43, "name": "Escitalopram 10mg", "category": "Psychiatry", "price": 70, "cost": 42, "stock": 35, "expiry": "2027-06", "min_stock": 15, "manufacturer": "Cipla", "gst": 12, "batch_no": "EC001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 44, "name": "Clonazepam 0.5mg", "category": "Psychiatry", "price": 40, "cost": 24, "stock": 25, "expiry": "2027-04", "min_stock": 15, "manufacturer": "Roche", "gst": 12, "batch_no": "CZ001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 45, "name": "Levothyroxine 50mcg", "category": "Thyroid", "price": 50, "cost": 30, "stock": 80, "expiry": "2027-09", "min_stock": 30, "manufacturer": "Abbott", "gst": 12, "batch_no": "LT001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 46, "name": "Propylthiouracil 50mg", "category": "Thyroid", "price": 45, "cost": 27, "stock": 35, "expiry": "2027-07", "min_stock": 15, "manufacturer": "Sun Pharma", "gst": 12, "batch_no": "PT001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 47, "name": "Hydroxychloroquine 200mg", "category": "Anti-inflammatory", "price": 85, "cost": 52, "stock": 50, "expiry": "2027-05", "min_stock": 20, "manufacturer": "Cipla", "gst": 12, "batch_no": "HC001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 48, "name": "Prednisolone 5mg", "category": "Steroid", "price": 20, "cost": 11, "stock": 120, "expiry": "2027-08", "min_stock": 40, "manufacturer": "Pfizer", "gst": 12, "batch_no": "PR001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 49, "name": "Methylprednisolone 8mg", "category": "Steroid", "price": 60, "cost": 36, "stock": 45, "expiry": "2027-06", "min_stock": 20, "manufacturer": "Pfizer", "gst": 12, "batch_no": "ML001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 50, "name": "Salbutamol Inhaler", "category": "Respiratory", "price": 140, "cost": 90, "stock": 30, "expiry": "2027-03", "min_stock": 15, "manufacturer": "GSK", "gst": 12, "batch_no": "SB001", "hsn_code": "3004", "pack_size": "200 doses"},
+            {"id": 51, "name": "Budesonide Inhaler", "category": "Respiratory", "price": 320, "cost": 220, "stock": 20, "expiry": "2026-12", "min_stock": 10, "manufacturer": "AstraZeneca", "gst": 12, "batch_no": "BD001", "hsn_code": "3004", "pack_size": "200 doses"},
+            {"id": 52, "name": "Montelukast 10mg", "category": "Respiratory", "price": 80, "cost": 50, "stock": 65, "expiry": "2027-07", "min_stock": 25, "manufacturer": "MSD", "gst": 12, "batch_no": "MN001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 53, "name": "Vitamin C 500mg", "category": "Vitamin", "price": 40, "cost": 24, "stock": 150, "expiry": "2027-12", "min_stock": 50, "manufacturer": "Mankind", "gst": 18, "batch_no": "VC001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 54, "name": "Vitamin D3 60000IU", "category": "Vitamin", "price": 75, "cost": 45, "stock": 90, "expiry": "2027-11", "min_stock": 30, "manufacturer": "Abbott", "gst": 18, "batch_no": "VD001", "hsn_code": "3004", "pack_size": "4 sachets"},
+            {"id": 55, "name": "Folic Acid 5mg", "category": "Vitamin", "price": 20, "cost": 11, "stock": 170, "expiry": "2027-10", "min_stock": 50, "manufacturer": "FDC", "gst": 12, "batch_no": "FA001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 56, "name": "Zinc Sulphate 20mg", "category": "Vitamin", "price": 35, "cost": 20, "stock": 130, "expiry": "2027-09", "min_stock": 40, "manufacturer": "Cipla", "gst": 12, "batch_no": "ZN001", "hsn_code": "3004", "pack_size": "10x10"},
+            {"id": 57, "name": "Betadine 5% Solution", "category": "Topical", "price": 85, "cost": 52, "stock": 40, "expiry": "2027-06", "min_stock": 15, "manufacturer": "Win-Medicare", "gst": 12, "batch_no": "BT001", "hsn_code": "3004", "pack_size": "100ml"},
+            {"id": 58, "name": "Soframycin Cream", "category": "Topical", "price": 60, "cost": 36, "stock": 50, "expiry": "2027-08", "min_stock": 20, "manufacturer": "Sanofi", "gst": 12, "batch_no": "SF001", "hsn_code": "3304", "pack_size": "25g"},
+            {"id": 59, "name": "Clotrimazole Cream", "category": "Topical", "price": 45, "cost": 27, "stock": 60, "expiry": "2027-05", "min_stock": 20, "manufacturer": "Bayer", "gst": 12, "batch_no": "CT001B", "hsn_code": "3304", "pack_size": "15g"},
+            {"id": 60, "name": "ORS Sachet", "category": "Gastric", "price": 10, "cost": 5, "stock": 300, "expiry": "2027-12", "min_stock": 100, "manufacturer": "WHO", "gst": 5, "batch_no": "ORS01", "hsn_code": "3004", "pack_size": "1 sachet"},
         ]
     
     if 'customers' not in st.session_state:
@@ -108,6 +149,18 @@ def init_db():
             {"id": 6, "name": "Anita Das", "phone": "9876543219", "address": "Burdwan", "total_spent": 9200, "visits": 28, "dob": "1990-05-12", "blood_group": "O-", "emergency": "9876543220", "allergies": "Sulpha", "points": 920},
             {"id": 7, "name": "Pranab Ghosh", "phone": "9876543221", "address": "Putsuri, Burdwan", "total_spent": 4500, "visits": 12, "dob": "1978-08-25", "blood_group": "A-", "emergency": "9876543222", "allergies": "None", "points": 450},
             {"id": 8, "name": "Usha Devi", "phone": "9876543223", "address": "Memari", "total_spent": 11200, "visits": 35, "dob": "1982-12-08", "blood_group": "B+", "emergency": "9876543224", "allergies": "None", "points": 1120},
+            {"id": 9, "name": "Tapan Mondal", "phone": "9876543225", "address": "Putsuri", "total_spent": 7800, "visits": 22, "dob": "1972-04-17", "blood_group": "O+", "emergency": "9876543226", "allergies": "None", "points": 780},
+            {"id": 10, "name": "Gita Rani Dey", "phone": "9876543227", "address": "Burdwan Sadar", "total_spent": 19500, "visits": 60, "dob": "1955-08-30", "blood_group": "A+", "emergency": "9876543228", "allergies": "Penicillin", "points": 1950},
+            {"id": 11, "name": "Swapan Roy", "phone": "9876543229", "address": "Memari, Burdwan", "total_spent": 5400, "visits": 16, "dob": "1988-01-25", "blood_group": "AB-", "emergency": "9876543230", "allergies": "None", "points": 540},
+            {"id": 12, "name": "Rekha Banerjee", "phone": "9876543231", "address": "Putsuri, Burdwan", "total_spent": 14200, "visits": 44, "dob": "1965-06-10", "blood_group": "B+", "emergency": "9876543232", "allergies": "Aspirin", "points": 1420},
+            {"id": 13, "name": "Kartik Paul", "phone": "9876543233", "address": "Burdwan", "total_spent": 3100, "visits": 9, "dob": "1995-11-20", "blood_group": "O-", "emergency": "9876543234", "allergies": "None", "points": 310},
+            {"id": 14, "name": "Mita Ghosh", "phone": "9876543235", "address": "Memari", "total_spent": 22000, "visits": 70, "dob": "1960-03-05", "blood_group": "A-", "emergency": "9876543236", "allergies": "Sulpha", "points": 2200},
+            {"id": 15, "name": "Biplab Sen", "phone": "9876543237", "address": "Putsuri, Burdwan", "total_spent": 8900, "visits": 27, "dob": "1983-09-14", "blood_group": "B-", "emergency": "9876543238", "allergies": "None", "points": 890},
+            {"id": 16, "name": "Sujata Sarkar", "phone": "9876543239", "address": "Burdwan", "total_spent": 6700, "visits": 19, "dob": "1991-07-07", "blood_group": "AB+", "emergency": "9876543240", "allergies": "None", "points": 670},
+            {"id": 17, "name": "Nimai Chatterjee", "phone": "9876543241", "address": "Memari, Burdwan", "total_spent": 13400, "visits": 41, "dob": "1967-12-22", "blood_group": "O+", "emergency": "9876543242", "allergies": "None", "points": 1340},
+            {"id": 18, "name": "Parul Devi", "phone": "9876543243", "address": "Putsuri", "total_spent": 4200, "visits": 12, "dob": "1979-05-18", "blood_group": "B+", "emergency": "9876543244", "allergies": "None", "points": 420},
+            {"id": 19, "name": "Asim Kumar Das", "phone": "9876543245", "address": "Burdwan Sadar", "total_spent": 17600, "visits": 55, "dob": "1958-10-08", "blood_group": "A+", "emergency": "9876543246", "allergies": "NSAIDs", "points": 1760},
+            {"id": 20, "name": "Sumitra Roy", "phone": "9876543247", "address": "Memari", "total_spent": 9300, "visits": 29, "dob": "1986-02-14", "blood_group": "O+", "emergency": "9876543248", "allergies": "None", "points": 930},
         ]
     
     if 'staff' not in st.session_state:
@@ -116,6 +169,10 @@ def init_db():
             {"id": 2, "name": "Sunita Devi", "phone": "9876543212", "role": "Sales Staff", "salary": 10000, "joining": "2021-06-01", "aadhar": "123456789013", "address": "Memari, Burdwan"},
             {"id": 3, "name": "Mintu Shaw", "phone": "9876543213", "role": "Delivery Boy", "salary": 8000, "joining": "2022-03-10", "aadhar": "123456789014", "address": "Burdwan"},
             {"id": 4, "name": "Kabita Paul", "phone": "9876543214", "role": "Compounder", "salary": 12000, "joining": "2021-09-05", "aadhar": "123456789015", "address": "Putsuri"},
+            {"id": 5, "name": "Raju Das", "phone": "9876543215", "role": "Delivery Boy", "salary": 8000, "joining": "2023-01-10", "aadhar": "123456789016", "address": "Memari"},
+            {"id": 6, "name": "Priya Mondal", "phone": "9876543216", "role": "Cashier", "salary": 11000, "joining": "2022-07-15", "aadhar": "123456789017", "address": "Burdwan"},
+            {"id": 7, "name": "Lakshmi Roy", "phone": "9876543217", "role": "Sales Staff", "salary": 10000, "joining": "2023-06-01", "aadhar": "123456789018", "address": "Putsuri"},
+            {"id": 8, "name": "Dilip Shaw", "phone": "9876543218", "role": "Security", "salary": 9000, "joining": "2022-03-20", "aadhar": "123456789019", "address": "Burdwan"},
         ]
     
     if 'distributors' not in st.session_state:
@@ -125,6 +182,11 @@ def init_db():
             {"id": 3, "name": "Agrawal Pharma", "contact": "9432012345", "address": "Asansol", "balance": 12000},
             {"id": 4, "name": "Chatterjee Agencies", "contact": "9876123456", "address": "Durgapur", "balance": 5500},
             {"id": 5, "name": "MediCare Distributors", "contact": "9330012345", "address": "Kolkata", "balance": 20000},
+            {"id": 6, "name": "Lupin Healthcare Ltd", "contact": "9123456789", "address": "Nashik, Maharashtra", "balance": 14000},
+            {"id": 7, "name": "Sun Pharma Depot", "contact": "9234567890", "address": "Mumbai", "balance": 9500},
+            {"id": 8, "name": "Cipla Pharma Dist.", "contact": "9345678901", "address": "Kolkata, Park Street", "balance": 18000},
+            {"id": 9, "name": "Abbott Healthcare", "contact": "9456789012", "address": "Delhi", "balance": 7000},
+            {"id": 10, "name": "Dr. Reddy's Dist.", "contact": "9567890123", "address": "Hyderabad", "balance": 11000},
         ]
     
     if 'daily_sales' not in st.session_state:
@@ -279,6 +341,12 @@ def init_db():
         st.session_state.purchase_orders = [
             {"id": 1, "supplier": "Ganga Medical Hall", "date": str(yesterday), "expected": str(today + timedelta(days=3)), "status": "Ordered", "items": "Metformin 500mg x100, Amlodipine 5mg x100", "notes": "Urgent"},
             {"id": 2, "supplier": "Basu Dev & Sons", "date": str(last_week), "expected": str(today), "status": "Received", "items": "Azithromycin 500mg x50, Paracetamol 500mg x200", "notes": ""},
+            {"id": 3, "supplier": "Cipla Pharma Dist.", "date": str(today - timedelta(days=3)), "expected": str(today + timedelta(days=5)), "status": "Ordered", "items": "Cetirizine 10mg x200, Losartan 50mg x150, Atorvastatin 10mg x100", "notes": "Monthly restock"},
+            {"id": 4, "supplier": "Agrawal Pharma", "date": str(today - timedelta(days=10)), "expected": str(today - timedelta(days=2)), "status": "Received", "items": "Vitamin B Complex x200, Calcium D3 x100, Folic Acid 5mg x300", "notes": ""},
+            {"id": 5, "supplier": "MediCare Distributors", "date": str(today - timedelta(days=5)), "expected": str(today + timedelta(days=2)), "status": "Ordered", "items": "Insulin Glargine x30, Metformin 500mg x500, Glimepiride 1mg x200", "notes": "Diabetic medicines urgent"},
+            {"id": 6, "supplier": "Sun Pharma Depot", "date": str(today - timedelta(days=15)), "expected": str(today - timedelta(days=8)), "status": "Received", "items": "Domperidone 10mg x300, Rabeprazole 20mg x200, Ondansetron 4mg x150", "notes": ""},
+            {"id": 7, "supplier": "Lupin Healthcare Ltd", "date": str(today - timedelta(days=2)), "expected": str(today + timedelta(days=7)), "status": "Pending", "items": "Salbutamol Inhaler x50, Budesonide Inhaler x30, Montelukast 10mg x200", "notes": "Asthma & respiratory"},
+            {"id": 8, "supplier": "Abbott Healthcare", "date": str(today - timedelta(days=20)), "expected": str(today - timedelta(days=12)), "status": "Received", "items": "Levothyroxine 50mcg x300, Vitamin D3 60000IU x200", "notes": ""},
         ]
     
     if 'visiting_doctors' not in st.session_state:
@@ -288,6 +356,13 @@ def init_db():
             {"id": 3, "name": "Dr. Priya Singh", "degree": "MBBS, DGO", "hospital": "Life Care Hospital", "date": str(today), "patients": 6, "specialization": "Gynecologist", "phone": "9432033333", "fee": 400, "days": ["Mon", "Thu"], "timing": "11AM - 3PM"},
             {"id": 4, "name": "Dr. Subrata Mukherjee", "degree": "MBBS, MS (Ortho)", "hospital": "Burdwan Ortho Center", "date": str(today), "patients": 5, "specialization": "Orthopedic", "phone": "9432044444", "fee": 350, "days": ["Wed", "Sat"], "timing": "10AM - 2PM"},
             {"id": 5, "name": "Dr. Anjan Das", "degree": "MBBS, MD (Pediatric)", "hospital": "Children Care", "date": str(yesterday), "patients": 10, "specialization": "Pediatrician", "phone": "9432055555", "fee": 250, "days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "timing": "9AM - 12PM"},
+            {"id": 6, "name": "Dr. Nilufar Begum", "degree": "MBBS, DGO", "hospital": "Mother & Child Clinic", "date": str(today), "patients": 9, "specialization": "Gynecologist", "phone": "9432066666", "fee": 350, "days": ["Mon", "Wed", "Fri"], "timing": "10AM - 2PM"},
+            {"id": 7, "name": "Dr. Rajesh Saha", "degree": "MBBS, MS (General Surgery)", "hospital": "Burdwan Surgical Centre", "date": str(today), "patients": 7, "specialization": "Surgeon", "phone": "9432077777", "fee": 500, "days": ["Tue", "Thu", "Sat"], "timing": "11AM - 4PM"},
+            {"id": 8, "name": "Dr. Pabitra Sen", "degree": "MBBS, DM (Cardiology)", "hospital": "Heart Care Hospital", "date": str(yesterday), "patients": 6, "specialization": "Cardiologist", "phone": "9432088888", "fee": 600, "days": ["Mon", "Thu"], "timing": "10AM - 1PM"},
+            {"id": 9, "name": "Dr. Sumita Roy", "degree": "MBBS, MD (Dermatology)", "hospital": "Skin Clinic Burdwan", "date": str(today), "patients": 14, "specialization": "Dermatologist", "phone": "9432099999", "fee": 400, "days": ["Tue", "Fri", "Sat"], "timing": "12PM - 5PM"},
+            {"id": 10, "name": "Dr. Partha Chatterjee", "degree": "MBBS, MS (ENT)", "hospital": "ENT Specialty Hospital", "date": str(yesterday), "patients": 8, "specialization": "ENT Specialist", "phone": "9432010101", "fee": 300, "days": ["Wed", "Sat"], "timing": "9AM - 1PM"},
+            {"id": 11, "name": "Dr. Mousumi Ghosh", "degree": "MBBS, MD (Neurology)", "hospital": "Neuro Care Centre", "date": str(today), "patients": 5, "specialization": "Neurologist", "phone": "9432010202", "fee": 700, "days": ["Mon", "Fri"], "timing": "11AM - 3PM"},
+            {"id": 12, "name": "Dr. Biswanath Dey", "degree": "MBBS, MD (Endocrinology)", "hospital": "Diabetes & Thyroid Clinic", "date": str(today), "patients": 11, "specialization": "Endocrinologist", "phone": "9432010303", "fee": 450, "days": ["Tue", "Thu", "Sat"], "timing": "10AM - 2PM"},
         ]
     
     if 'online_orders' not in st.session_state:
@@ -295,6 +370,13 @@ def init_db():
             {"id": 1, "date": str(today), "time": "10:30", "customer": "Riya Sharma", "phone": "9876543210", "email": "riya@gmail.com", "address": "12, ABC Road, Putsuri, Burdhan", "notes": "Ring bell", "delivery_type": "Home Delivery", "items": [{"medicine": "Paracetamol 500mg", "price": 35, "qty": 2, "total": 70}, {"medicine": "Vitamin B Complex", "price": 45, "qty": 1, "total": 45}], "subtotal": 115, "gst": 14, "delivery": 50, "total": 179, "payment": "COD", "status": "Pending", "payment_status": "Pending"},
             {"id": 2, "date": str(yesterday), "time": "14:20", "customer": "Ajay Kumar", "phone": "9876543211", "email": "ajay@gmail.com", "address": "45, XYZ Lane, Memari", "notes": "Leave at gate", "delivery_type": "Home Delivery", "items": [{"medicine": "Metformin 500mg", "price": 45, "qty": 3, "total": 135}, {"medicine": "Amlodipine 5mg", "price": 35, "qty": 2, "total": 70}], "subtotal": 205, "gst": 25, "delivery": 0, "total": 230, "payment": "UPI", "status": "Delivered", "payment_status": "Paid"},
             {"id": 3, "date": str(last_week), "time": "09:15", "customer": "Smt. Gita Devi", "phone": "9876543212", "email": "gita@gmail.com", "address": "Putsuri Bazar", "notes": "", "delivery_type": "Pickup", "items": [{"medicine": "Calcium D3", "price": 120, "qty": 1, "total": 120}], "subtotal": 120, "gst": 22, "delivery": 0, "total": 142, "payment": "COD", "status": "Delivered", "payment_status": "Paid"},
+            {"id": 4, "date": str(today), "time": "08:45", "customer": "Suresh Mondal", "phone": "9831234567", "email": "", "address": "Village Nimta, Burdwan", "notes": "Please pack carefully", "delivery_type": "Home Delivery", "items": [{"medicine": "Glimepiride 1mg", "price": 55, "qty": 2, "total": 110}, {"medicine": "Metformin 500mg", "price": 45, "qty": 2, "total": 90}, {"medicine": "Aspirin 75mg", "price": 28, "qty": 1, "total": 28}], "subtotal": 228, "gst": 27, "delivery": 50, "total": 305, "payment": "COD", "status": "Confirmed", "payment_status": "Pending"},
+            {"id": 5, "date": str(today), "time": "11:00", "customer": "Priti Roy", "phone": "9874561230", "email": "priti.roy@gmail.com", "address": "Flat 3B, Shibpur Apartment, Memari", "notes": "", "delivery_type": "Home Delivery", "items": [{"medicine": "Cetirizine 10mg", "price": 25, "qty": 3, "total": 75}, {"medicine": "Combiflam", "price": 20, "qty": 2, "total": 40}], "subtotal": 115, "gst": 14, "delivery": 50, "total": 179, "payment": "UPI", "status": "Out for Delivery", "payment_status": "Paid"},
+            {"id": 6, "date": str(yesterday), "time": "16:55", "customer": "Debashis Ghosh", "phone": "9007612345", "email": "debashis@yahoo.com", "address": "40, Station Road, Burdwan", "notes": "Call before delivery", "delivery_type": "Home Delivery", "items": [{"medicine": "Pantoprazole 40mg", "price": 85, "qty": 2, "total": 170}, {"medicine": "Omeprazole 20mg", "price": 30, "qty": 1, "total": 30}], "subtotal": 200, "gst": 24, "delivery": 0, "total": 224, "payment": "UPI", "status": "Delivered", "payment_status": "Paid"},
+            {"id": 7, "date": str(today - timedelta(days=2)), "time": "13:10", "customer": "Mala Banerjee", "phone": "9831122334", "email": "", "address": "Putsuri Main Road", "notes": "Fragile — inhalers", "delivery_type": "Home Delivery", "items": [{"medicine": "Salbutamol Inhaler", "price": 185, "qty": 1, "total": 185}, {"medicine": "Montelukast", "price": 75, "qty": 1, "total": 75}], "subtotal": 260, "gst": 31, "delivery": 50, "total": 341, "payment": "COD", "status": "Delivered", "payment_status": "Paid"},
+            {"id": 8, "date": str(today - timedelta(days=3)), "time": "10:05", "customer": "Bikash Pal", "phone": "9876001234", "email": "bikash.pal@gmail.com", "address": "Kalna Road, Burdwan", "notes": "", "delivery_type": "Pickup", "items": [{"medicine": "Azithromycin 500mg", "price": 120, "qty": 1, "total": 120}, {"medicine": "Dolo 650", "price": 35, "qty": 2, "total": 70}, {"medicine": "Vitamin B Complex", "price": 45, "qty": 1, "total": 45}], "subtotal": 235, "gst": 28, "delivery": 0, "total": 263, "payment": "Cash", "status": "Delivered", "payment_status": "Paid"},
+            {"id": 9, "date": str(today - timedelta(days=4)), "time": "17:30", "customer": "Anita Saha", "phone": "9432100011", "email": "", "address": "Vill. Bardhaman Para, Burdwan", "notes": "Evening delivery preferred", "delivery_type": "Home Delivery", "items": [{"medicine": "Losartan 50mg", "price": 65, "qty": 2, "total": 130}, {"medicine": "Atorvastatin 10mg", "price": 85, "qty": 1, "total": 85}], "subtotal": 215, "gst": 26, "delivery": 50, "total": 291, "payment": "COD", "status": "Cancelled", "payment_status": "Refunded"},
+            {"id": 10, "date": str(today - timedelta(days=5)), "time": "09:50", "customer": "Tapas Sen", "phone": "9876543299", "email": "tapas@gmail.com", "address": "Rajbati Colony, Burdwan", "notes": "", "delivery_type": "Home Delivery", "items": [{"medicine": "Iron Tablet", "price": 25, "qty": 2, "total": 50}, {"medicine": "Folic Acid 5mg", "price": 30, "qty": 2, "total": 60}, {"medicine": "Calcium D3", "price": 120, "qty": 1, "total": 120}], "subtotal": 230, "gst": 40, "delivery": 50, "total": 320, "payment": "UPI", "status": "Delivered", "payment_status": "Paid"},
         ]
     
     if 'cart' not in st.session_state:
@@ -1227,7 +1309,7 @@ def page_doctors():
     t = translations[st.session_state.lang]
     st.markdown(f'<h1 class="gradient-text" style="font-size:1.8rem;">👨‍⚕️ {t["doctors"]}</h1>', unsafe_allow_html=True)
     
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["🗓️ Appointments", "👨‍⚕️ Doctor Directory", "🏥 Patient Queue", "💰 Doctor-wise Sales", "📊 Doctor Reports"])
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["🗓️ Appointments", "👨‍⚕️ Doctor Directory", "🏥 Patient Queue", "💰 Doctor-wise Sales", "📊 Doctor Reports", "📷 Prescription Scanner"])
     
     with tab1:
         st.markdown("### 🗓️ Book Appointment")
@@ -1393,20 +1475,294 @@ def page_doctors():
             top_doc = max(doctor_sales.items(), key=lambda x: x[1]['revenue'])
             if top_doc[0] != 'None':
                 st.success(f"🏆 Top Performing Doctor: **{top_doc[0]}** with ₹{top_doc[1]['revenue']:,} revenue!")
-    
+
     with tab5:
         st.markdown("### 📊 Doctor Performance Reports")
-        
+
         c1, c2, c3 = st.columns(3)
         c1.metric("Total Doctors", len(st.session_state.visiting_doctors))
         c2.metric("Total Patients Today", sum(d.get('patients', 0) for d in st.session_state.visiting_doctors))
         c3.metric("Active Doctors Today", len([d for d in st.session_state.visiting_doctors if d.get('date', '') == today_str]))
-        
+
         st.markdown("### 📈 Monthly Performance")
         for doc in st.session_state.visiting_doctors:
             with st.expander(f"📊 {doc['name']}"):
                 st.write(f"**Patients this month:** {doc.get('patients', 0)}")
                 st.write(f"**Estimated Revenue:** ₹{doc.get('patients', 0) * doc.get('fee', 0):,}")
+
+    with tab6:
+        st.markdown("### 📷 Prescription Scanner")
+        st.markdown("Scan or upload a prescription image — medicines are auto-detected and matched to inventory, then a bill can be created.")
+
+        # ── Step state ──────────────────────────────────────────────
+        if 'rx_step' not in st.session_state:
+            st.session_state.rx_step = 0
+        if 'rx_detected' not in st.session_state:
+            st.session_state.rx_detected = []   # list of {name, qty, matched, med_obj}
+        if 'rx_cart' not in st.session_state:
+            st.session_state.rx_cart = []
+
+        step = st.session_state.rx_step
+
+        # ── Helper: OCR + match ──────────────────────────────────────
+        def run_ocr_and_match(img_bytes):
+            """Returns list of detected medicine dicts."""
+            import re
+            try:
+                from PIL import Image
+                import pytesseract
+                import io
+                img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
+                raw_text = pytesseract.image_to_string(img)
+            except Exception as e:
+                st.warning(f"OCR error: {e}. You can still add medicines manually below.")
+                raw_text = ""
+
+            inventory = st.session_state.inventory
+            results = []
+            seen = set()
+
+            qty_pattern = re.compile(r'[xX×*]\s*(\d+)|(\d+)\s*(?:tab|cap|strip|pcs|nos|days|x)', re.IGNORECASE)
+
+            for line in raw_text.splitlines():
+                line_clean = line.strip()
+                if len(line_clean) < 3:
+                    continue
+
+                # Extract quantity from line
+                qty = 1
+                m = qty_pattern.search(line_clean)
+                if m:
+                    qty = int(m.group(1) or m.group(2))
+                    qty = max(1, min(qty, 100))
+
+                # Match against inventory
+                matched_med = None
+                line_lower = line_clean.lower()
+                # Exact / substring match on medicine name
+                for med in inventory:
+                    med_name_lower = med['name'].lower()
+                    if med_name_lower in line_lower or any(
+                        word in line_lower for word in med_name_lower.split() if len(word) >= 4
+                    ):
+                        matched_med = med
+                        break
+
+                key = (matched_med['id'] if matched_med else line_clean[:30])
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                results.append({
+                    "raw": line_clean,
+                    "name": matched_med['name'] if matched_med else line_clean,
+                    "qty": qty,
+                    "matched": matched_med is not None,
+                    "med": matched_med,
+                })
+
+            return results
+
+        # ── STEP 0: Capture ──────────────────────────────────────────
+        if step == 0:
+            st.markdown("#### Step 1 of 3 — Capture Prescription")
+            src = st.radio("Image Source", ["📷 Camera", "📂 Upload File"], horizontal=True)
+
+            img_bytes = None
+            if "Camera" in src:
+                cam_img = st.camera_input("Point camera at the prescription")
+                if cam_img:
+                    img_bytes = cam_img.getvalue()
+            else:
+                up = st.file_uploader("Upload prescription image", type=["jpg", "jpeg", "png", "webp", "bmp"])
+                if up:
+                    img_bytes = up.read()
+
+            col1, col2 = st.columns(2)
+            with col1:
+                if img_bytes and st.button("🔍 Scan Prescription", type="primary", use_container_width=True):
+                    with st.spinner("Running OCR…"):
+                        results = run_ocr_and_match(img_bytes)
+                    st.session_state.rx_detected = results
+                    st.session_state.rx_cart = [r for r in results if r['matched']]
+                    st.session_state.rx_step = 1
+                    st.rerun()
+            with col2:
+                if st.button("✍️ Skip — Add Medicines Manually", use_container_width=True):
+                    st.session_state.rx_detected = []
+                    st.session_state.rx_cart = []
+                    st.session_state.rx_step = 1
+                    st.rerun()
+
+        # ── STEP 1: Review + Edit Cart ────────────────────────────────
+        elif step == 1:
+            st.markdown("#### Step 2 of 3 — Review Detected Medicines")
+
+            inv_names = [m['name'] for m in st.session_state.inventory]
+            inv_map = {m['name']: m for m in st.session_state.inventory}
+
+            detected = st.session_state.rx_detected
+            cart = st.session_state.rx_cart
+
+            if detected:
+                matched = [d for d in detected if d['matched']]
+                unmatched = [d for d in detected if not d['matched']]
+
+                if matched:
+                    st.markdown("**✅ Matched Medicines**")
+                    for i, d in enumerate(matched):
+                        c1, c2, c3 = st.columns([3, 1, 1])
+                        c1.markdown(f"💊 **{d['name']}** — ₹{d['med']['price']}/strip")
+                        new_qty = c2.number_input("Qty", min_value=1, max_value=50, value=d['qty'], key=f"mq_{i}")
+                        in_cart = any(c['name'] == d['name'] for c in cart)
+                        if c3.checkbox("Add", value=in_cart, key=f"mc_{i}"):
+                            if not in_cart:
+                                cart.append({**d, "qty": new_qty, "total": new_qty * d['med']['price']})
+                        else:
+                            cart = [c for c in cart if c['name'] != d['name']]
+
+                if unmatched:
+                    st.markdown("**⚠️ Unrecognised Lines** — select a medicine manually")
+                    for j, d in enumerate(unmatched):
+                        c1, c2 = st.columns([2, 2])
+                        c1.text(f"📝 {d['raw'][:40]}")
+                        sel = c2.selectbox("Match to", ["-- skip --"] + inv_names, key=f"us_{j}")
+                        if sel != "-- skip --":
+                            qty_u = st.number_input("Qty", min_value=1, value=1, key=f"uq_{j}")
+                            cart.append({"name": sel, "qty": qty_u, "matched": True, "med": inv_map[sel], "total": qty_u * inv_map[sel]['price']})
+
+            # Manual adder
+            st.markdown("---")
+            st.markdown("**➕ Add Medicine Manually**")
+            ma_col1, ma_col2, ma_col3 = st.columns([3, 1, 1])
+            man_med = ma_col1.selectbox("Medicine", ["-- select --"] + inv_names, key="man_med")
+            man_qty = ma_col2.number_input("Qty", min_value=1, value=1, key="man_qty")
+            if ma_col3.button("➕ Add", key="man_add"):
+                if man_med != "-- select --":
+                    med_obj = inv_map[man_med]
+                    cart.append({"name": man_med, "qty": man_qty, "matched": True, "med": med_obj, "total": man_qty * med_obj['price']})
+
+            # Deduplicate cart by name
+            seen_names = {}
+            deduped = []
+            for item in cart:
+                if item['name'] not in seen_names:
+                    seen_names[item['name']] = True
+                    deduped.append(item)
+            cart = deduped
+            st.session_state.rx_cart = cart
+
+            # Cart summary
+            if cart:
+                st.markdown("---")
+                st.markdown("**🛒 Cart Summary**")
+                total_amount = 0
+                for item in cart:
+                    price = item['med']['price'] if item.get('med') else 0
+                    line_total = item['qty'] * price
+                    total_amount += line_total
+                    st.write(f"• {item['name']}  ×{item['qty']}  = ₹{line_total}")
+                st.success(f"**Subtotal: ₹{total_amount:,}**")
+
+            col1, col2 = st.columns(2)
+            with col1:
+                if st.button("⬅️ Back", use_container_width=True):
+                    st.session_state.rx_step = 0
+                    st.rerun()
+            with col2:
+                if cart and st.button("➡️ Proceed to Checkout", type="primary", use_container_width=True):
+                    st.session_state.rx_step = 2
+                    st.rerun()
+
+        # ── STEP 2: Checkout ──────────────────────────────────────────
+        elif step == 2:
+            st.markdown("#### Step 3 of 3 — Patient Details & Checkout")
+            cart = st.session_state.rx_cart
+
+            # Bill preview
+            subtotal = sum(item['qty'] * item['med']['price'] for item in cart if item.get('med'))
+            st.markdown("**🛒 Bill Items**")
+            for item in cart:
+                price = item['med']['price'] if item.get('med') else 0
+                st.write(f"• {item['name']}  ×{item['qty']}  = ₹{item['qty']*price}")
+
+            with st.form("rx_checkout"):
+                c1, c2 = st.columns(2)
+                with c1:
+                    pat_name = st.text_input("Patient Name *")
+                    pat_phone = st.text_input("Patient Phone")
+                with c2:
+                    doc_options = ["None"] + [d['name'] for d in st.session_state.visiting_doctors]
+                    rx_doctor = st.selectbox("Prescribed by (Doctor)", doc_options)
+                    pay_method = st.selectbox("Payment Method", ["Cash", "UPI", "Card", "Credit"])
+
+                discount = st.number_input("Discount (₹)", min_value=0, value=0)
+                grand_total = max(0, subtotal - discount)
+                st.markdown(f"### 💰 Grand Total: ₹{grand_total:,}")
+
+                submitted = st.form_submit_button("✅ Save Bill & Create Sale", type="primary")
+                if submitted:
+                    if not pat_name.strip():
+                        st.error("Patient name is required.")
+                    elif not cart:
+                        st.error("Cart is empty.")
+                    else:
+                        # Build sale items
+                        items_list = []
+                        for item in cart:
+                            price = item['med']['price'] if item.get('med') else 0
+                            cost = item['med'].get('cost', 0) if item.get('med') else 0
+                            items_list.append({
+                                "medicine": item['name'],
+                                "price": price,
+                                "qty": item['qty'],
+                                "total": item['qty'] * price
+                            })
+                            # Decrement stock
+                            for med in st.session_state.inventory:
+                                if med['name'] == item['name']:
+                                    med['stock'] = max(0, med['stock'] - item['qty'])
+
+                        profit = sum(
+                            (item['med']['price'] - item['med'].get('cost', 0)) * item['qty']
+                            for item in cart if item.get('med')
+                        ) - discount
+
+                        sale = {
+                            "id": len(st.session_state.daily_sales) + 1,
+                            "bill_no": f"RX-{len(st.session_state.daily_sales)+1:04d}",
+                            "date": str(datetime.now().date()),
+                            "time": datetime.now().strftime("%H:%M"),
+                            "customer": pat_name.strip(),
+                            "phone": pat_phone.strip(),
+                            "doctor": rx_doctor if rx_doctor != "None" else "",
+                            "items": items_list,
+                            "subtotal": subtotal,
+                            "discount": discount,
+                            "total": grand_total,
+                            "profit": max(0, profit),
+                            "payment": pay_method,
+                            "notes": "Created via Prescription Scanner"
+                        }
+                        st.session_state.daily_sales.append(sale)
+
+                        # Increment doctor referral count
+                        if rx_doctor != "None":
+                            for doc in st.session_state.visiting_doctors:
+                                if doc['name'] == rx_doctor:
+                                    doc['patients'] = doc.get('patients', 0) + 1
+
+                        # Reset scanner state
+                        st.session_state.rx_step = 0
+                        st.session_state.rx_detected = []
+                        st.session_state.rx_cart = []
+
+                        st.success(f"✅ Bill #{sale['bill_no']} saved! Total: ₹{grand_total:,}")
+                        st.balloons()
+
+            if st.button("⬅️ Back to Cart"):
+                st.session_state.rx_step = 1
+                st.rerun()
 
 def page_expenses():
     t = translations[st.session_state.lang]
